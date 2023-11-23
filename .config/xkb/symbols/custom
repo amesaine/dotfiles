@@ -1,0 +1,30 @@
+partial modifier_keys
+xkb_symbols "slash_becomes_rsuper" {
+	replace key <AB10> { type[Group1] = "ONE_LEVEL",
+			symbols[Group1] = [ Super_R ] };
+};
+
+partial modifier_keys
+xkb_symbols "rtsh_becomes_slash" {
+    replace key <RTSH> { [ slash, question ] };
+};
+
+partial modifier_keys
+xkb_symbols "ralt_becomes_esc" {
+	replace key <RALT> { [ Escape ] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "apostrophe_swap_return" {
+    replace key <AC11> { type[Group1]="ONE_LEVEL", [ Return ] };
+    replace key <RTRN> { [ apostrophe, quotedbl ] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "bksp_opbr_clbr_bksl" {
+    replace key <AD11> { type[Group1]="ONE_LEVEL", [ BackSpace ] };
+    replace key <AD12> { [ bracketleft, braceleft ] }; 
+    replace key <BKSL> { [ bracketright, braceright ]};
+    replace key <BKSP> { [ backslash, bar ] };
+};
+

@@ -1,0 +1,15 @@
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "qwerty" {
+
+    include "us(basic)"
+    name[Group1]= "US (Jnzig)";
+
+    include "capslock(ctrl_modifier)"
+
+    include "custom(slash_becomes_rsuper)"
+    include "custom(ralt_becomes_esc)"
+    include "custom(apostrophe_swap_return)"
+    include "custom(bksp_opbr_clbr_bksl)"
+    include "custom(rtsh_becomes_slash)"
+};
+
