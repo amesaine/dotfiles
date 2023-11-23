@@ -8,3 +8,15 @@ hobbits in mind. It retains the placement of alphanumeric keys and relocates mod
 keys and super keys with sane defaults. Additional layouts are included to take
 advantage of keyboard layout switching. 
 
+Resources
+---------
+[XKB Configuration Files Documentation](https://www.charvolant.org/doug/xkb/html/node5.html#SECTION00054000000000000000)
+
+[Setting up ~/.config/xkb/](https://who-t.blogspot.com/2020/02/user-specific-xkb-configuration-part-1.html)
+
+[Creating evdev.xml](https://who-t.blogspot.com/2020/07/user-specific-xkb-configuration-part-2.html)
+
+[Extending system layouts with custom variants](https://who-t.blogspot.com/2020/08/user-specific-xkb-configuration-part-3.html)
+
+[Youtube video where I discovered the blog posts from](https://www.youtube.com/watch?v=utqpa_8SXkA)
+
