@@ -1,0 +1,28 @@
+#!/usr/bin/sh
+
+kb_id="1:1:AT_Translated_Set_2_keyboard" 
+
+cf_line=$(swaymsg -t get_config -p | grep 'client\.focused')
+default_border=$(echo "$cf_line" | awk '{print $2}')
+background=$(echo "$cf_line" | awk '{print $3}')
+text=$(echo "$cf_line" | awk '{print $4}')
+indicator=$(echo "$cf_line" | awk '{print $5}')
+
+# Color Palette
+red="#E64747" # red
+
+swaymsg "input $kb_id xkb_switch_layout next"
+cur_layout=$(swaymsg -t get_inputs | jq --arg kb_id "$kb_id" -r '.[] | select(.identifier == $kb_id) | .xkb_active_layout_name')
+case "$cur_layout" in
+    "Jnzig (Qwerty)")
+        exec swaymsg "client.focused $default_border $default_border $text $indicator"
+        ;;
+    "Jnzig (Homerow Symbols)")
+        exec swaymsg "client.focused $red $red $text $indicator"
+        ;;
+    *)
+        # Handle other cases or provide a default action
+        exec swaymsg "client.focused $default_border $default_border $text $indicator"
+        ;;
+esac
+
