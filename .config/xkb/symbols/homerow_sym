@@ -1,0 +1,40 @@
+// If replacing a multi-level key with a single level key
+// Assign the single-level for all levels instead of type=ONE_LEVEL
+
+partial alphanumeric_keys
+xkb_symbols "d_swap_delete" {
+    replace key <AC03> { type[Group1]="ONE_LEVEL", [ Delete ] };
+    replace key <DELE> { [ d, D ] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "arrow_swap_hjkl" {
+    replace key <AC06> { type[Group1]="ONE_LEVEL", [ Left ] };
+    replace key <AC07> { type[Group1]="ONE_LEVEL", [ Down ] };
+    replace key <AC08> { type[Group1]="ONE_LEVEL", [ Up ] };
+    replace key <AC09> { type[Group1]="ONE_LEVEL", [ Right] };
+    replace key <LEFT> { [ h, H ] };
+    replace key <DOWN> { [ j, J ] };
+    replace key <UP> { [ k, K ] };
+    replace key <RGHT> { [ l, L ] };
+};
+
+// emulate bash keybinds
+partial alphanumeric_keys
+xkb_symbols "a_swap_home" {
+    replace key <AC01> { type[Group1]="ONE_LEVEL", [ Home ] };
+    replace key <HOME> { [ a, A ] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "e_swap_end" {
+    replace key <AD03> { type[Group1]="ONE_LEVEL", [ End ] };
+    replace key <KP_End> { [ e, E ] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "t_swap_tab" { 
+    replace key <AD05> { type[Group1]="ONE_LEVEL", [ Tab ] };
+    replace key <TAB> { [ t, T ] };
+};
+

@@ -1,0 +1,25 @@
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "qwerty" {
+
+    include "us(basic)"
+    name[Group1]= "Jnzig (Qwerty)";
+
+    include "capslock(ctrl_modifier)"
+
+    include "custom(slash_becomes_rsuper)"
+    include "custom(ralt_becomes_esc)"
+    include "custom(apostrophe_swap_return)"
+    include "custom(bksp_opbr_clbr_bksl)"
+    include "custom(rtsh_becomes_slash)"
+};
+
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "homerow_sym" {
+    include "jnzig(qwerty)"
+    name[Group1]= "Jnzig (Homerow Symbols)";
+    include "homerow_sym(d_swap_delete)"
+    include "homerow_sym(arrow_swap_hjkl)"
+    include "homerow_sym(a_swap_home)"
+    include "homerow_sym(e_swap_end)"
+    include "homerow_sym(t_swap_tab)"
+};
