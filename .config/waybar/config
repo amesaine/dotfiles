@@ -1,0 +1,70 @@
+{
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 5,
+    "modules-left": ["clock#date", "clock#time","wlr/taskbar"],
+    "modules-center": ["sway/workspaces", "sway/language"],
+    "modules-right": ["pulseaudio", "pulseaudio#2", "network"],
+    "sway/window": {
+        "max-length": 50
+    },
+
+    "clock#date": {
+        "format": "{:%a %m/%d}",
+        "tooltip-format": "{:%c}"
+    },
+    "clock#time": {
+        "format": "{:%I:%M %p}"
+    },
+    "wlr/taskbar": {
+        "sort-by-app-id": true,
+        "format": "{icon}",
+        "icon-size": 15,
+        "icon-theme": "Papirus",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "foot"
+        ]
+    },
+    
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "●",
+        "persistent_workspaces": {
+            "1":[],
+            "2":[],
+            "3":[],
+        }
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "MUTE {icon}",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 10,
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio#2": {
+        "format": "{format_source}",
+        "format-source-muted": "",
+        "on-click": "pavucontrol -t 4"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "",
+        "format-ethernet": "󰊗",
+        "format-disconnected": "OFFLINE", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    }
+}
