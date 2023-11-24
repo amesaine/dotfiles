@@ -8,6 +8,14 @@ hobbits in mind. It retains the placement of alphanumeric keys and relocates mod
 keys and super keys with sane defaults. Additional layouts are included to take
 advantage of keyboard layout switching. 
 
+## Layouts
+
+### KCX Qwerty (Default)
+![KCX Qwerty (Default) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-qwerty-default.webp)
+
+### KCX Qwerty (Homerow Symbols)
+![KCX Qwerty (Homerow Symbols) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-qwerty-homerow-symbols.webp)
+
 Resources
 ---------
 [XKB Configuration Files Documentation](https://www.charvolant.org/doug/xkb/html/node5.html#SECTION00054000000000000000)
