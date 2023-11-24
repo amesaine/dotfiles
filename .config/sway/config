@@ -188,7 +188,7 @@ input type:touchpad {
 
 # Keyboard
 input 1:1:AT_Translated_Set_2_keyboard {
-    xkb_layout jnzig(qwerty),jnzig(homerow_sym)
+    xkb_layout kcx(qwerty),kcx(homerow_sym)
 }
 bindsym Control+semicolon exec sway-kbfb
 

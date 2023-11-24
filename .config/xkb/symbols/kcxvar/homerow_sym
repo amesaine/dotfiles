@@ -1,12 +1,10 @@
-// If replacing a multi-level key with a single level key
-// Assign the single-level for all levels instead of type=ONE_LEVEL
-
 partial alphanumeric_keys
 xkb_symbols "d_swap_delete" {
     replace key <AC03> { type[Group1]="ONE_LEVEL", [ Delete ] };
     replace key <DELE> { [ d, D ] };
 };
 
+// emulate vim motions
 partial alphanumeric_keys
 xkb_symbols "arrow_swap_hjkl" {
     replace key <AC06> { type[Group1]="ONE_LEVEL", [ Left ] };
@@ -26,6 +24,7 @@ xkb_symbols "a_swap_home" {
     replace key <HOME> { [ a, A ] };
 };
 
+// emulate bash keybinds
 partial alphanumeric_keys
 xkb_symbols "e_swap_end" {
     replace key <AD03> { type[Group1]="ONE_LEVEL", [ End ] };
@@ -38,3 +37,8 @@ xkb_symbols "t_swap_tab" {
     replace key <TAB> { [ t, T ] };
 };
 
+partial alphanumeric_keys
+xkb_symbols "i_swap_insert" { 
+    replace key <AD08> { type[Group1]="ONE_LEVEL", [ Insert ] };
+    replace key <INS> { [ i, I ] };
+};

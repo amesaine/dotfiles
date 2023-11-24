@@ -1,0 +1,26 @@
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "qwerty" {
+
+    include "us(basic)"
+    name[Group1]= "KCX (Qwerty)";
+
+    include "capslock(ctrl_modifier)"
+
+    include "kcxvar/qwerty(slash_becomes_rsuper)"
+    include "kcxvar/qwerty(ralt_becomes_esc)"
+    include "kcxvar/qwerty(apostrophe_swap_return)"
+    include "kcxvar/qwerty(bksp_opbr_clbr_bksl)"
+    include "kcxvar/qwerty(rtsh_becomes_slash)"
+};
+
+partial alphanumeric_keys modifier_keys
+xkb_symbols "homerow_sym" {
+    include "kcx(qwerty)"
+    name[Group1]= "KCX (Homerow Symbols)";
+    include "kcxvar/homerow_sym(d_swap_delete)"
+    include "kcxvar/homerow_sym(arrow_swap_hjkl)"
+    include "kcxvar/homerow_sym(a_swap_home)"
+    include "kcxvar/homerow_sym(e_swap_end)"
+    include "kcxvar/homerow_sym(t_swap_tab)"
+    include "kcxvar/homerow_sym(i_swap_insert)"
+};

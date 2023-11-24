@@ -14,10 +14,10 @@ red="#E64747" # red
 swaymsg "input $kb_id xkb_switch_layout next"
 cur_layout=$(swaymsg -t get_inputs | jq --arg kb_id "$kb_id" -r '.[] | select(.identifier == $kb_id) | .xkb_active_layout_name')
 case "$cur_layout" in
-    "Jnzig (Qwerty)")
+    "KCX (Qwerty)")
         exec swaymsg "client.focused $default_border $default_border $text $indicator"
         ;;
-    "Jnzig (Homerow Symbols)")
+    "KCX (Homerow Symbols)")
         exec swaymsg "client.focused $red $red $text $indicator"
         ;;
     *)
