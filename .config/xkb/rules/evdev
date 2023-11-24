@@ -6,11 +6,15 @@ kcx/qwerty:apostrophe_swap_return = +kcxvar/qwerty(apostrophe_swap_return)
 kcx/qwerty:rtsh_becomes_slash = +kcxvar/qwerty(rtsh_becomes_slash)
 kcx/qwerty:bksp_opbr_clbr_bksl = +kcxvar/qwerty(bksp_opbr_clbr_bksl)
 kcx/qwerty:d_swap_delete = +kcxvar/qwerty(d_swap_delete)
+kcx/qwerty:rctl_becomes_capslock = +kcxvar/qwerty(rctl_becomes_capslock)
+
 kcx/homerow_sym:d_swap_delete = +kcxvar/homerow_sym(d_swap_delete)
 kcx/homerow_sym:arrow_swap_hjkl = +kcxvar/homerow_sym(arrow_swap_hjkl)
 kcx/homerow_sym:a_swap_home = +kcxvar/homerow_sym(a_swap_home)
 kcx/homerow_sym:e_swap_end = +kcxvar/homerow_sym(e_swap_end)
 kcx/homerow_sym:t_swap_tab = +kcxvar/homerow_sym(t_swap_tab)
 kcx/homerow_sym:i_swap_insert = +kcxvar/homerow_sym(i_swap_insert)
+kcx/homerow_sym:u_swap_capslock = +kcxvar/homerow_sym(u_swap_capslock)
+kcx/homerow_sym:s_swap_lfsh = +kcxvar/homerow_sym(s_swap_lfsh)
 
 ! include %S/evdev

@@ -1,7 +1,6 @@
 partial modifier_keys
 xkb_symbols "slash_becomes_rsuper" {
-	replace key <AB10> { type[Group1] = "ONE_LEVEL",
-			symbols[Group1] = [ Super_R ] };
+	replace key <AB10> { type[Group1] = "ONE_LEVEL", [ Super_R ] };
 };
 
 partial modifier_keys
@@ -28,3 +27,7 @@ xkb_symbols "bksp_opbr_clbr_bksl" {
     replace key <BKSP> { [ backslash, bar ] };
 };
 
+partial modifier_keys
+xkb_symbols "rctl_becomes_capslock" {
+	replace key <RCTL> { [ Caps_Lock ] };
+};

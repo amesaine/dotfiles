@@ -11,6 +11,7 @@ xkb_symbols "qwerty" {
     include "kcxvar/qwerty(apostrophe_swap_return)"
     include "kcxvar/qwerty(bksp_opbr_clbr_bksl)"
     include "kcxvar/qwerty(rtsh_becomes_slash)"
+    include "kcxvar/qwerty(rctl_becomes_capslock)"
 };
 
 partial alphanumeric_keys modifier_keys
@@ -23,4 +24,6 @@ xkb_symbols "homerow_sym" {
     include "kcxvar/homerow_sym(e_swap_end)"
     include "kcxvar/homerow_sym(t_swap_tab)"
     include "kcxvar/homerow_sym(i_swap_insert)"
+    include "kcxvar/homerow_sym(u_swap_capslock)"
+    include "kcxvar/homerow_sym(s_swap_lfsh)"
 };

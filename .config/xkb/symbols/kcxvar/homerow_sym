@@ -42,3 +42,15 @@ xkb_symbols "i_swap_insert" {
     replace key <AD08> { type[Group1]="ONE_LEVEL", [ Insert ] };
     replace key <INS> { [ i, I ] };
 };
+
+partial alphanumeric_keys
+xkb_symbols "u_swap_capslock" { 
+    replace key <AD07> { type[Group1]="ONE_LEVEL", [ Caps_Lock] };
+    replace key <RCTL> { [ u, U ] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "s_swap_lfsh" { 
+    replace key <AC02> { type[Group1]="ONE_LEVEL", [ Shift_L] };
+    replace key <LFSH> { [ s, S] };
+};
