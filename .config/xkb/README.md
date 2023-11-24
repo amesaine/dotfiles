@@ -11,6 +11,7 @@ advantage of keyboard layout switching.
 Resources
 ---------
 [XKB Configuration Files Documentation](https://www.charvolant.org/doug/xkb/html/node5.html#SECTION00054000000000000000)
+[Libxkbcommon commit: Allow for custom ruleets through include files](https://github.com/xkbcommon/libxkbcommon/pull/108/commits/bc4a691cb9f45c3309c78c997e00212f0978d082)
 
 [Setting up ~/.config/xkb/](https://who-t.blogspot.com/2020/02/user-specific-xkb-configuration-part-1.html)
 
