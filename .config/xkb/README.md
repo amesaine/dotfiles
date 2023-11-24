@@ -10,11 +10,11 @@ advantage of keyboard layout switching.
 
 ## Layouts
 
-### KCX Qwerty (Default)
-![KCX Qwerty (Default) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-qwerty.webp
+### KCX (Qwerty)
+![KCX (Qwerty) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-qwerty.webp)
 
-### KCX Qwerty (Homerow Symbols)
-![KCX Qwerty (Homerow Symbols) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-homerow-symbols.webp)
+### KCX (Homerow Symbols)
+![KCX (Homerow Symbols) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-homerow-symbols.webp)
 
 Resources
 ---------
