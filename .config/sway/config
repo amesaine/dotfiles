@@ -171,6 +171,7 @@ default_border pixel 3
 client.focused #50FA7B #50FA7B #50FA7B #F8F8F2 #50FA7B
 
 focus_on_window_activation focus
+popup_during_fullscreen leave_fullscreen
 
 focus_follows_mouse no
 mouse_warping container
