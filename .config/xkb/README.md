@@ -8,13 +8,25 @@ hobbits in mind. It retains the placement of alphanumeric keys and relocates mod
 keys and super keys with sane defaults. Additional layouts are included to take
 advantage of keyboard layout switching. 
 
-## Layouts
+Layouts
+-------
 
 ### KCX (Qwerty)
 ![KCX (Qwerty) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-qwerty.webp)
 
 ### KCX (Homerow Symbols)
 ![KCX (Homerow Symbols) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-homerow-symbols.webp)
+
+Quickstart
+----------
+```
+  git clone -n --depth=1 --filter=tree:0 https://github.com/jnzigg/dotfiles
+  cd dotfiles
+  git sparse-checkout set --no-cone .config/xkb
+  git checkout
+```
+
+
 
 Resources
 ---------
