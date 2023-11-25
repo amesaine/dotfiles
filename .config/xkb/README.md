@@ -20,11 +20,16 @@ Layouts
 Quickstart
 ----------
 ```
-  git clone -n --depth=1 --filter=tree:0 https://github.com/jnzigg/dotfiles
-  cd dotfiles
-  git sparse-checkout set --no-cone .config/xkb
-  git checkout
+git clone -n --depth=1 --filter=tree:0 https://github.com/jnzigg/dotfiles
+cd dotfiles
+git sparse-checkout set --no-cone .config/xkb
+git checkout
+mkdir -p $HOME/.config/xkb/rules
+mkdir -p $HOME/.config/xkb/symbols
+cp -ir rules/* $HOME/.config/xkb/rules/
+cp -ir symbols/* $HOME/.config/xkb/symbols/
 ```
+> Note: You will be prompted should there be any overwrites.
 
 
 
