@@ -46,6 +46,18 @@ window#waybar {
     padding: 0 10px;
 }
 
+#keyboard-state label.capslock {
+    font-size: 0;
+    background: @theme_bg_color;
+}
+
+#keyboard-state label.capslock.locked {
+    font-size: 15px;
+    padding: 0 15px;
+    background: @warning_color; 
+}
+
+
 #pulseaudio {
     padding: 0 10px;
     background: @theme_bg_color;

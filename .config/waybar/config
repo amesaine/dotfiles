@@ -3,9 +3,9 @@
     "margin-left": 10,
     "margin-right": 10,
     "spacing": 5,
-    "modules-left": ["clock#date", "clock#time","wlr/taskbar"],
+    "modules-left": ["clock#date", "clock#time", "wlr/taskbar"], 
     "modules-center": ["sway/workspaces", "sway/language"],
-    "modules-right": ["pulseaudio", "pulseaudio#2", "network"],
+    "modules-right": [ "keyboard-state", "pulseaudio", "pulseaudio#2", "network"],
     "sway/window": {
         "max-length": 50
     },
@@ -29,7 +29,7 @@
             "foot"
         ]
     },
-    
+
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -38,6 +38,15 @@
             "1":[],
             "2":[],
             "3":[],
+        }
+    },
+
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
         }
     },
     "pulseaudio": {
