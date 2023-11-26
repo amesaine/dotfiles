@@ -57,6 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+    # made with ezprompt.net
     # get current branch in git repo
     function parse_git_branch() {
         BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -103,7 +104,7 @@ if [ "$color_prompt" = yes ]; then
         fi
     }
 
-    export PS1="\e[32m\][\A]\e[35m\]\w\[\e[m\]\[\e[36m\]\`parse_git_branch\`\[\e[m\]\\$ "
+    export PS1="\[\e[32m\][\A]\[\e[35m\]\w\[\e[m\]\[\e[36m\]\`parse_git_branch\`\[\e[33m\]\n\$ \[\e[m\]"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
