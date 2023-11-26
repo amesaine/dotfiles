@@ -4,7 +4,7 @@
     "margin-right": 10,
     "spacing": 5,
     "modules-left": ["clock#date", "clock#time", "wlr/taskbar"], 
-    "modules-center": ["sway/workspaces", "sway/language"],
+    "modules-center": ["sway/workspaces"],
     "modules-right": [ "keyboard-state", "pulseaudio", "pulseaudio#2", "network"],
     "sway/window": {
         "max-length": 50
