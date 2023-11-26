@@ -36,6 +36,13 @@ cp -ir .config/xkb/symbols/* $HOME/.config/xkb/symbols/
 input type:keyboard {
     xkb_layout kcx(qwerty),kcx(homerow_sym)
 }
+bindsym Control+semicolon exec swaymsg input type:keyboard xkb_switch_layout next
+```
+
+You can use my [bash script][sway-kbfb] if you want to change window border colors when switching
+
+```
+bindsym Control+semicolon exec sway-kbfb
 ```
 
 Resources
@@ -52,3 +59,4 @@ Resources
 
 [Youtube video where I discovered the blog posts from](https://www.youtube.com/watch?v=utqpa_8SXkA)
 
+[sway-kbfb]: https://github.com/jnzigg/dotfiles/blob/master/bin/sway-kbfb
