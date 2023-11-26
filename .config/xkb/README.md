@@ -31,7 +31,12 @@ cp -ir .config/xkb/symbols/* $HOME/.config/xkb/symbols/
 ```
 > Note: You will be prompted should there be any overwrites.
 
-
+### Sway
+```
+input type:keyboard {
+    xkb_layout kcx(qwerty),kcx(homerow_sym)
+}
+```
 
 Resources
 ---------
