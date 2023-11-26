@@ -26,8 +26,8 @@ git sparse-checkout set --no-cone .config/xkb
 git checkout
 mkdir -p $HOME/.config/xkb/rules
 mkdir -p $HOME/.config/xkb/symbols
-cp -ir rules/* $HOME/.config/xkb/rules/
-cp -ir symbols/* $HOME/.config/xkb/symbols/
+cp -ir .config/xkb/rules/* $HOME/.config/xkb/rules/
+cp -ir .config/xkb/symbols/* $HOME/.config/xkb/symbols/
 ```
 > Note: You will be prompted should there be any overwrites.
 
