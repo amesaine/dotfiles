@@ -103,7 +103,7 @@ if [ "$color_prompt" = yes ]; then
             echo ""
         fi
     }
-    export PS1="\[\e[30;45m\] \A\[\e[m\]\[\e[35;46m\]█\[\e[m\]\[\e[30;46m\]  \w\[\e[m\]\[\e[36m\]█\[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\]\[\e[37m\]\n\\$\[\e[m\] "
+    export PS1="\[\e[30;45m\] \@\[\e[m\]\[\e[35;46m\]█\[\e[m\]\[\e[30;46m\]  \w\[\e[m\]\[\e[36m\]█\[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\]\[\e[37m\]\n\\$\[\e[m\] "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
