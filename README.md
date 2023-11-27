@@ -2,6 +2,13 @@ dotfiles
 ========
 thy dots and scripts
 
+TODO
+----
+- icons in waybar
+- webcam suspension state in waybar
+- improve sway-kbfb script
+- improve bash PS1 variable readability
+
 
 Theme - Dracula
 ---------------
