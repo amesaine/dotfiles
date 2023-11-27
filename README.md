@@ -8,6 +8,7 @@ TODO
 - webcam suspension state in waybar
 - improve sway-kbfb script
 - improve bash PS1 variable readability
+- evdev.xml for xkb config
 
 
 Theme - Dracula
