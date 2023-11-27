@@ -64,7 +64,7 @@ if [ "$color_prompt" = yes ]; then
         if [ ! "${BRANCH}" == "" ]
         then
             STAT=`parse_git_dirty`
-            echo "[${BRANCH}${STAT}]"
+            echo "  ${BRANCH}${STAT}"
         else
             echo ""
         fi
@@ -72,12 +72,12 @@ if [ "$color_prompt" = yes ]; then
     # get current status of git repo
     function parse_git_dirty {
         status=`git status 2>&1 | tee`
-        dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
-        untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
-        ahead=`echo -n "${status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
-        newfile=`echo -n "${status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
-        renamed=`echo -n "${status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
-        deleted=`echo -n "${status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
+        dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$"`
+        untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$"`
+        ahead=`echo -n "${status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$"`
+        newfile=`echo -n "${status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$"`
+        renamed=`echo -n "${status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$"`
+        deleted=`echo -n "${status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$"`
         bits=''
         if [ "${renamed}" == "0" ]; then
             bits=">${bits}"
@@ -103,8 +103,7 @@ if [ "$color_prompt" = yes ]; then
             echo ""
         fi
     }
-
-    export PS1="\[\e[32m\][\A]\[\e[35m\]\w\[\e[m\]\[\e[36m\]\`parse_git_branch\`\[\e[33m\]\n\$ \[\e[m\]"
+    export PS1="\[\e[30;45m\] \A\[\e[m\]\[\e[35;46m\]█\[\e[m\]\[\e[30;46m\]  \w\[\e[m\]\[\e[36m\]█\[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\]\[\e[37m\]\n\\$\[\e[m\] "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
