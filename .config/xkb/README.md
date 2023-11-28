@@ -29,8 +29,8 @@ mkdir -p $HOME/.config/xkb/symbols
 cp -r -S .bak .config/xkb/rules/* $HOME/.config/xkb/rules/
 cp -r -S .bak .config/xkb/symbols/* $HOME/.config/xkb/symbols/
 ```
-> Note: This will overwrite your files. Your original configuration files
-will be renamed as evdev.xml.bak
+> Note: This will overwrite existing destination files. Your original files such as evdev.xml
+will be saved as evdev.xml.bak
 
 ### Sway
 ```
@@ -48,11 +48,11 @@ bindsym Control+semicolon exec sway-kbfb
 
 ### GNOME
 
-1. Add the keyboard layouts in ***gnome-control-center > Keyboard > Input Sources***
-2. Set the layout switch shortcut under ***...Keyboard > View and Customize Shortcuts > Typing***
-with my recommended `Control + semicolon` keybind.
-3. Instead of using the full layout, you can instead toggle individual options in
-***gnome-tweaks > Keyboard & Mouse > Additional Layout Options > KCX Options***
+1. Add the keyboard layouts in `gnome-control-center > Keyboard > Input Sources`
+2. Set the layout switch shortcut under `...Keyboard > View and Customize Shortcuts > Typing`
+with my recommended *Control + semicolon* keybind.
+3. Instead of using the full layout, you can toggle individual options in
+`gnome-tweaks > Keyboard & Mouse > Additional Layout Options > KCX Options`
 
 Resources
 ---------
