@@ -63,8 +63,9 @@ FAQ
 ### Why QWERTY instead of this other superior layout?
 
 > Qwerty is the standard. Learning an obscure layout for speed/ergonomics is unnecessary and inconvenient. 
-On average, I type 110-135wpm which is more than enough (i flexed on ya btw). I also developed a style
-of touch typing that maximizes ergonomics. (which i may make a repo/wiki on)
+On average, I type 110-135wpm which is more than enough (i flexed on ya btw). My style of touch typing
+also maximizes ergonomics.
+
 
 ### Where's Right Shift?
 
@@ -78,7 +79,7 @@ of Caps Lock in QWERTY mode if it is essential.
 ### Do I need a special keyboard for this?
 
 > Any standard keyboard will do. Flatter keyboards on laptops are better solely because it is easier
-to press the relocated Escape (previously Right Alt) with the right thumb.
+to press the relocated Escape with the right thumb.
 
 
 
