@@ -3,7 +3,7 @@ KCX Qwerty - Keyboard-Centric Experience
 
 QWERTY variant for a keyboard-centric and mouseless desktop experience.
 
-KCX Qwerty is a variant made to streamline keyboard shortcut usage with touch typists, vim users, and terminal
+KCX Qwerty is a variant made to streamline keyboard shortcut usage with laptops, touch typists, vim users, and terminal
 hobbits in mind. Additional layouts are included to take
 advantage of keyboard layout switching. 
 
@@ -48,14 +48,40 @@ bindsym Control+semicolon exec sway-kbfb
 
 ### GNOME
 
-1. Add the keyboard layouts in `gnome-control-center > Keyboard > Input Sources`
+1. Search for *KCX (Qwerty)* and *KCX (Homerow Symbols)* in `gnome-control-center > Keyboard > Input Sources`
 2. Set the layout switch shortcut under `...Keyboard > View and Customize Shortcuts > Typing`
 with my recommended *Control + semicolon* keybind.
 3. Instead of using the full layout, you can toggle individual options in
 `gnome-tweaks > Keyboard & Mouse > Additional Layout Options > KCX Options`
 
+FAQ
+---
+
+### Why QWERTY instead of this other superior layout?
+
+> Qwerty is the standard. Learning an obscure layout for speed/ergonomics is unnecessary and inconvenient. 
+On average, I type 110-135wpm which is more than enough (i flexed on ya btw). I also developed a style
+of touch typing that maximizes ergonomics. (which i may make a repo/wiki on)
+
+### Where's Right Shift?
+
+> I never used it so it went bye-bye.
+
+### Where's Right Alt? I need AltGr for foreign characters.
+
+> I do not use it so it was replaced with Escape. I suggest replacing Right Control with Right Alt instead
+of Caps Lock in QWERTY mode if it is essential.
+
+### Do I need a special keyboard for this?
+
+> Any standard keyboard will do. Flatter keyboards on laptops are better solely because it is easier
+to press the relocated Escape (previously Right Alt) with the right thumb.
+
+
+
 Resources
 ---------
+
 [XKB Configuration Files Documentation](https://www.charvolant.org/doug/xkb/html/node5.html#SECTION00054000000000000000)
 
 [Libxkbcommon commit: Allow for custom rulesets through include files](https://github.com/xkbcommon/libxkbcommon/pull/108/commits/bc4a691cb9f45c3309c78c997e00212f0978d082)
