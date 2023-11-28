@@ -40,7 +40,7 @@ input type:keyboard {
 bindsym Control+semicolon exec swaymsg input type:keyboard xkb_switch_layout next
 ```
 
-You can use my [bash script][sway-kbfb] if you want to change window border colors when switching
+You can use my [bash script][sway-kbfb] if you want to change focused window border colors when switching layouts.
 
 ```
 bindsym Control+semicolon exec sway-kbfb
