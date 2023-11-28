@@ -23,6 +23,9 @@ Theming
 ### Cursor Theme - Bibata Modern Ice
 <https://github.com/ful1e5/Bibata_Cursor>
 
+### Font - 0xProto
+<https://github.com/0xType/0xProto>
+
 ### Color Palette - Dracula <img src="https://github.com/dracula/draculatheme.com/blob/ad815d12958b530c842525a0de7671388ebe8cca/public/static/icons/used/pack-1/045-dracula.svg" height="25">
 
 #### Official Dracula
