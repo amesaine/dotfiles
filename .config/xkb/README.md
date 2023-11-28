@@ -47,24 +47,11 @@ bindsym Control+semicolon exec sway-kbfb
 
 ### GNOME
 
-#### Using the layouts
-
-Add the keyboard layouts in **gnome-control-center > Keyboard > Input Sources**
-
-![Screenshot of adding input sources in gnome-control-center][gnome-add-input-source]
-
-Then set the layout switching shortcut under **...Input Sources > View and Customize Shortcuts > Typing**
-with the recommended *Control + semicolon* keybind.
-
-![Screenshot of setting layout switching shortcut][gnome-switch-layout-shortcut]
-
-#### Setting individual xkb options
-
-Besides editing the configuration files, the layouts' options can be toggled in
-**gnome-tweaks > Keyboard & Mouse > Additional Layout Options**
-
-![Screenshot of adding input sources in gnome-tweaks][gnome-tweaks]
-
+1. Add the keyboard layouts in gnome-control-center > Keyboard > Input Sources
+2. Set the layout switch shortcut under *...Input Sources > View and Customize Shortcuts > Typing*
+with the recommended `Control + semicolon` keybind.
+3. Instead of using the full layout, you can instead toggle individual options in
+*gnome-tweaks > Keyboard & Mouse > Additional Layout Options > KCX Options*
 
 Resources
 ---------
