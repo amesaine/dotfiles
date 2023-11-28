@@ -1,4 +1,4 @@
-jdotfiles
+dotfiles
 ========
 thy dots and scripts
 
@@ -6,13 +6,14 @@ TODO
 ----
 - [ ] icons in waybar
 - [ ] webcam suspension state in waybar
-- [ ] improve sway-kbfb script
+- [ ] use golang for sway-kbfb script
 - [ ] improve bash PS1 variable readability
 - [x] evdev.xml for xkb config
 
 
 Theme - Dracula <img src="https://github.com/dracula/draculatheme.com/blob/ad815d12958b530c842525a0de7671388ebe8cca/public/static/icons/used/pack-1/045-dracula.svg" height="25">
 ---------------
+
 ### Official Color Palette
 
 <https://draculatheme.com/contribute>
