@@ -4,11 +4,11 @@ thy dots and scripts
 
 TODO
 ----
-- icons in waybar
-- webcam suspension state in waybar
-- improve sway-kbfb script
-- improve bash PS1 variable readability
-- evdev.xml for xkb config
+- [ ] icons in waybar
+- [ ] webcam suspension state in waybar
+- [ ] improve sway-kbfb script
+- [ ] improve bash PS1 variable readability
+- [x] evdev.xml for xkb config
 
 
 Theme - Dracula
