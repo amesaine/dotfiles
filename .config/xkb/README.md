@@ -56,7 +56,7 @@ Add the keyboard layouts in **gnome-control-center > Keyboard > Input Sources**
 Then set the layout switching shortcut under **...Input Sources > View and Customize Shortcuts > Typing**
 with the recommended *Control + semicolon* keybind.
 
-![Screenshot of setting layout switching shortcut]
+![Screenshot of setting layout switching shortcut][gnome-switch-layout-shortcut]
 
 #### Setting individual xkb options
 
