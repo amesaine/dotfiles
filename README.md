@@ -1,4 +1,4 @@
-jdotfiles
+dotfiles
 ========
 thy dots and scripts
 
