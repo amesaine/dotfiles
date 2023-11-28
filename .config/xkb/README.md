@@ -18,6 +18,7 @@ Layouts
 
 Quickstart
 ----------
+### Installation
 ```
 git clone -n --depth=1 --filter=tree:0 https://github.com/jnzigg/dotfiles
 cd dotfiles
