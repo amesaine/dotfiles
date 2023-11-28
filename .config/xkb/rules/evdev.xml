@@ -30,8 +30,7 @@
     <group allowMultipleSelection="true">
       <configItem>
         <name>kcx</name>
-        <!-- Description's first letter must be lowercased -->
-        <description>kcx options</description>
+        <description>KCX Options</description>
       </configItem>
       <option>
         <configItem>
