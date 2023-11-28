@@ -63,7 +63,7 @@ with the recommended *Control + semicolon* keybind.
 Besides editing the configuration files, the layouts' options can be toggled in
 **gnome-tweaks > Keyboard & Mouse > Additional Layout Options**
 
-![Screenshot of adding input sources in gnome-tweaks][gnome-switch-layout-shortcut]
+![Screenshot of adding input sources in gnome-tweaks][gnome-tweaks]
 
 
 Resources
