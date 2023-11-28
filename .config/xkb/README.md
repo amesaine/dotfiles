@@ -26,10 +26,11 @@ git sparse-checkout set --no-cone .config/xkb
 git checkout
 mkdir -p $HOME/.config/xkb/rules
 mkdir -p $HOME/.config/xkb/symbols
-cp -ir .config/xkb/rules/* $HOME/.config/xkb/rules/
-cp -ir .config/xkb/symbols/* $HOME/.config/xkb/symbols/
+cp -r -S .bak .config/xkb/rules/* $HOME/.config/xkb/rules/
+cp -r -S .bak .config/xkb/symbols/* $HOME/.config/xkb/symbols/
 ```
-> Note: You will be prompted should there be any overwrites.
+> Note: This will overwrite your files. Your original configuration files
+will be renamed as evdev.xml.bak
 
 ### Sway
 ```
@@ -47,11 +48,11 @@ bindsym Control+semicolon exec sway-kbfb
 
 ### GNOME
 
-1. Add the keyboard layouts in gnome-control-center > Keyboard > Input Sources
-2. Set the layout switch shortcut under *...Input Sources > View and Customize Shortcuts > Typing*
-with the recommended `Control + semicolon` keybind.
+1. Add the keyboard layouts in ***gnome-control-center > Keyboard > Input Sources***
+2. Set the layout switch shortcut under ***...Keyboard > View and Customize Shortcuts > Typing***
+with my recommended `Control + semicolon` keybind.
 3. Instead of using the full layout, you can instead toggle individual options in
-*gnome-tweaks > Keyboard & Mouse > Additional Layout Options > KCX Options*
+***gnome-tweaks > Keyboard & Mouse > Additional Layout Options > KCX Options***
 
 Resources
 ---------
