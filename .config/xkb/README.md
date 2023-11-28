@@ -29,7 +29,8 @@ mkdir -p $HOME/.config/xkb/symbols
 cp -r -S .bak .config/xkb/rules/* $HOME/.config/xkb/rules/
 cp -r -S .bak .config/xkb/symbols/* $HOME/.config/xkb/symbols/
 ```
-> Note: This will overwrite existing destination files. Your original files such as evdev.xml
+> [!NOTE]
+> This will overwrite existing destination files. Your original files such as evdev.xml
 will be saved as evdev.xml.bak
 
 ### Sway
