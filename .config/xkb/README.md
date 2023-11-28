@@ -12,10 +12,10 @@ Layouts
 -------
 
 ### KCX (Qwerty)
-![KCX (Qwerty) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-qwerty.webp)
+![KCX (Qwerty) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-qwerty.webp)
 
 ### KCX (Homerow Symbols)
-![KCX (Homerow Symbols) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/resources/kcx-homerow-symbols.webp)
+![KCX (Homerow Symbols) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-homerow-symbols.webp)
 
 Quickstart
 ----------
@@ -45,6 +45,27 @@ You can use my [bash script][sway-kbfb] if you want to change window border colo
 bindsym Control+semicolon exec sway-kbfb
 ```
 
+### GNOME
+
+#### Using the layouts
+
+Add the keyboard layouts in **gnome-control-center > Keyboard > Input Sources**
+
+![Screenshot of adding input sources in gnome-control-center][gnome-add-input-source]
+
+Then set the layout switching shortcut under **...Input Sources > View and Customize Shortcuts > Typing**
+with the recommended *Control + semicolon* keybind.
+
+![Screenshot of setting layout switching shortcut]
+
+#### Setting individual xkb options
+
+Besides editing the configuration files, the layouts' options can be toggled in
+**gnome-tweaks > Keyboard & Mouse > Additional Layout Options**
+
+![Screenshot of adding input sources in gnome-tweaks][gnome-switch-layout-shortcut]
+
+
 Resources
 ---------
 [XKB Configuration Files Documentation](https://www.charvolant.org/doug/xkb/html/node5.html#SECTION00054000000000000000)
@@ -60,3 +81,6 @@ Resources
 [Youtube video where I discovered the blog posts from](https://www.youtube.com/watch?v=utqpa_8SXkA)
 
 [sway-kbfb]: https://github.com/jnzigg/dotfiles/blob/master/bin/sway-kbfb
+[gnome-add-input-source]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-add-input-source.webp
+[gnome-switch-layout-shortcut]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-switch-layout-shortcut.webp
+[gnome-tweaks]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-tweaks.webp

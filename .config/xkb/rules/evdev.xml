@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">
+  <layoutList>
+    <layout>
+      <configItem>
+        <name>kcx</name>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>qwerty</name>
+            <!-- I don't know what short description is for lol -->
+            <shortDescription>banana</shortDescription>
+            <description>KCX (Qwerty)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>homerow_sym</name>
+            <!-- I don't know what short description is for lol -->
+            <shortDescription>banana</shortDescription>
+            <description>KCX (Homerow Symbols)</description>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+  </layoutList>
+  <optionList>
+    <group allowMultipleSelection="true">
+      <configItem>
+        <name>kcx</name>
+        <!-- Description's first letter must be lowercased -->
+        <description>kcx options</description>
+      </configItem>
+      <option>
+        <configItem>
+          <name>kcx/qwerty:slash_becomes_rsuper</name>
+          <description>Forward Slash becomes Right Super</description>
+        </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/qwerty:ralt_becomes_esc</name>
+              <description>Right Alt becomes Escape</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/qwerty:apostrophe_swap_return</name>
+              <description>Apostrophe swaps with Return</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/qwerty:rtsh_becomes_slash</name>
+              <description>Right Shift becomes Forward Slash</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/qwerty:bksp_opbr_clbr_bksl</name>
+              <description>Rearrange backspace, Open/Closed Brackets, Backslash</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/qwerty:rctl_becomes_capslock</name>
+              <description>Right Control becomes Capslock</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:arrow_swap_hjkl</name>
+              <description>Arrow keys swap with HJKL</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:d_swap_delete</name>
+              <description>D swaps with Delete</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:a_swap_home</name>
+              <description>A swaps with Home</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:e_swap_end</name>
+              <description>E swaps with End</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:t_swap_tab</name>
+              <description>T swaps with Tab</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:i_swap_insert</name>
+              <description>I swaps with Insert</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:u_swap_capslock</name>
+              <description>U swaps with Caps Lock</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:s_swap_lfsh</name>
+              <description>S swaps with Left Shift</description>
+          </configItem>
+      </option>
+    </group>
+  </optionList>
+</xkbConfigRegistry>
