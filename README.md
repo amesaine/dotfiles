@@ -1,4 +1,4 @@
-dotfiles
+jdotfiles
 ========
 thy dots and scripts
 
@@ -11,23 +11,31 @@ TODO
 - [x] evdev.xml for xkb config
 
 
-Theme - Dracula <img src="https://github.com/dracula/draculatheme.com/blob/ad815d12958b530c842525a0de7671388ebe8cca/public/static/icons/used/pack-1/045-dracula.svg" height="25">
----------------
+Theming
+-------
 
-### Official Color Palette
+### GTK - Dracula <img src="https://github.com/dracula/draculatheme.com/blob/ad815d12958b530c842525a0de7671388ebe8cca/public/static/icons/used/pack-1/045-dracula.svg" height="25">
+<https://draculatheme.com/gtk>
+
+### Icon Pack - Papirus
+<https://github.com/PapirusDevelopmentTeam/papirus-icon-theme>
+
+### Curson Theme - Bibata Modern Ice
+<https://github.com/ful1e5/Bibata_Cursor>
+
+### Color Palette - Dracula <img src="https://github.com/dracula/draculatheme.com/blob/ad815d12958b530c842525a0de7671388ebe8cca/public/static/icons/used/pack-1/045-dracula.svg" height="25">
+
+#### Official Dracula
 
 <https://draculatheme.com/contribute>
 
-### Dracula Soft by Mofiqul
+#### Dracula Soft by Mofiqul
 <https://github.com/Mofiqul/dracula.nvim/blob/main/lua/dracula/palette-soft.lua>
 
    - Background - ![#292A35][background] `#292A35`
    - Foreground - ![#F6F6F5][foreground] `#F6F6F5`
    - Selection (ANSI 8) - ![#7C7F8A][selection] `#7C7F8A`
    - Orange - ![#FDC38E][orange] `#FDC38E`
-
-*ANSI*
-
    - Black - ![#1C1C1C][black] `#1C1C1C`
    - Red - ![#DD6E6B][red] `#DD6E6B`
    - Green - ![#87E58E][green] `#87E58E`
@@ -36,8 +44,6 @@ Theme - Dracula <img src="https://github.com/dracula/draculatheme.com/blob/ad815
    - Pink - ![#E48CC1][pink] `#E48CC1`
    - Cyan - ![#A7DFEF][cyan] `#A7DFEF`
    - White - ![#F6F6F5][white] `#F6F6F5`
-
-
    - Bright Red - ![#E1837F][bright_red] `#E1837F`
    - Bright Green - ![#97EDA2][bright_green] `#97EDA2`
    - Bright Yellow - ![#F6F6B6][bright_yellow] `#F6F6B6`
