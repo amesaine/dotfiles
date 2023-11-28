@@ -38,6 +38,8 @@ will be saved as *evdev.xml.bak*
 input type:keyboard {
     xkb_layout kcx(qwerty),kcx(homerow_sym)
 }
+```
+```
 bindsym Control+semicolon exec swaymsg input type:keyboard xkb_switch_layout next
 ```
 
