@@ -1,4 +1,4 @@
-dotfiles
+jdotfiles
 ========
 thy dots and scripts
 
@@ -11,7 +11,7 @@ TODO
 - [x] evdev.xml for xkb config
 
 
-Theme - Dracula
+Theme - Dracula <img src="https://github.com/dracula/draculatheme.com/blob/ad815d12958b530c842525a0de7671388ebe8cca/public/static/icons/used/pack-1/045-dracula.svg" height="25">
 ---------------
 ### Official Color Palette
 
