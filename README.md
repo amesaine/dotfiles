@@ -20,7 +20,7 @@ Theming
 ### Icon Pack - Papirus
 <https://github.com/PapirusDevelopmentTeam/papirus-icon-theme>
 
-### Curson Theme - Bibata Modern Ice
+### Cursor Theme - Bibata Modern Ice
 <https://github.com/ful1e5/Bibata_Cursor>
 
 ### Color Palette - Dracula <img src="https://github.com/dracula/draculatheme.com/blob/ad815d12958b530c842525a0de7671388ebe8cca/public/static/icons/used/pack-1/045-dracula.svg" height="25">
