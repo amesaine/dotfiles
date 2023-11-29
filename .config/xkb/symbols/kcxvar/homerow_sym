@@ -1,62 +1,46 @@
 partial alphanumeric_keys
-xkb_symbols "d_swap_delete" {
-    replace key <AC03> { type[Group1]="ONE_LEVEL", [ Delete ] };
-    replace key <DELE> { [ d, D ] };
-};
-
-// emulate vim motions
-partial alphanumeric_keys
-xkb_symbols "arrow_swap_hjkl" {
-    replace key <AC06> { type[Group1]="ONE_LEVEL", [ Left ] };
-    replace key <AC07> { type[Group1]="ONE_LEVEL", [ Down ] };
-    replace key <AC08> { type[Group1]="ONE_LEVEL", [ Up ] };
-    replace key <AC09> { type[Group1]="ONE_LEVEL", [ Right] };
-    replace key <LEFT> { [ h, H ] };
-    replace key <DOWN> { [ j, J ] };
-    replace key <UP> { [ k, K ] };
-    replace key <RGHT> { [ l, L ] };
-};
-
-// emulate bash keybinds
-partial alphanumeric_keys
-xkb_symbols "a_swap_home" {
-    replace key <AC01> { type[Group1]="ONE_LEVEL", [ Home ] };
-    replace key <HOME> { [ a, A ] };
-};
-
-// emulate bash keybinds
-partial alphanumeric_keys
-xkb_symbols "e_swap_end" {
-    replace key <AD03> { type[Group1]="ONE_LEVEL", [ End ] };
-    replace key <KP_End> { [ e, E ] };
-};
-
-partial alphanumeric_keys
 xkb_symbols "t_swap_tab" { 
     replace key <AD05> { type[Group1]="ONE_LEVEL", [ Tab ] };
     replace key <TAB> { [ t, T ] };
 };
 
+// emulate vim motions
 partial alphanumeric_keys
-xkb_symbols "i_swap_insert" { 
+xkb_symbols "arrow_becomes_hjkl" {
+    replace key <AC06> { type[Group1]="ONE_LEVEL", [ Left ] };
+    replace key <AC07> { type[Group1]="ONE_LEVEL", [ Down ] };
+    replace key <AC08> { type[Group1]="ONE_LEVEL", [ Up ] };
+    replace key <AC09> { type[Group1]="ONE_LEVEL", [ Right] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "d_becomes_delete" {
+    replace key <AC03> { type[Group1]="ONE_LEVEL", [ Delete ] };
+};
+
+// emulate bash keybinds
+partial alphanumeric_keys
+xkb_symbols "a_becomes_home" {
+    replace key <AC01> { type[Group1]="ONE_LEVEL", [ Home ] };
+};
+
+// emulate bash keybinds
+partial alphanumeric_keys
+xkb_symbols "e_becomes_end" {
+    replace key <AD03> { type[Group1]="ONE_LEVEL", [ End ] };
+};
+
+partial alphanumeric_keys
+xkb_symbols "i_becomes_insert" { 
     replace key <AD08> { type[Group1]="ONE_LEVEL", [ Insert ] };
-    replace key <INS> { [ i, I ] };
 };
 
 partial alphanumeric_keys
-xkb_symbols "u_swap_capslock" { 
+xkb_symbols "u_becomes_capslock" { 
     replace key <AD07> { type[Group1]="ONE_LEVEL", [ Caps_Lock] };
-    replace key <RCTL> { [ u, U ] };
 };
 
-// When pasting in terminal, do Shift+Ctrl+V instead of Ctrl+Shift+V
-// The latter sends a XOFF signal
-// This may be due to XOFF's default binding Control+s and
-// Shift being replaced with s
-// This takes effect even if homerow symbols isn't active
-// Haven't figured out how to fix it
 partial alphanumeric_keys
-xkb_symbols "s_swap_lfsh" { 
-    replace key <AC02> { type[Group1]="ONE_LEVEL", [ Shift_L] };
-    replace key <LFSH> { [ s, S ] };
+xkb_symbols "s_becomes_lfsh" { 
+    replace key <AC02> { type[Group1]="ONE_LEVEL", [ Shift_L ] };
 };

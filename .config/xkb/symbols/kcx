@@ -16,14 +16,16 @@ xkb_symbols "qwerty" {
 
 partial alphanumeric_keys modifier_keys
 xkb_symbols "homerow_sym" {
+
     include "kcx(qwerty)"
     name[Group1]= "KCX (Homerow Symbols)";
-    include "kcxvar/homerow_sym(d_swap_delete)"
-    include "kcxvar/homerow_sym(arrow_swap_hjkl)"
-    include "kcxvar/homerow_sym(a_swap_home)"
-    include "kcxvar/homerow_sym(e_swap_end)"
+
     include "kcxvar/homerow_sym(t_swap_tab)"
-    include "kcxvar/homerow_sym(i_swap_insert)"
-    include "kcxvar/homerow_sym(u_swap_capslock)"
-    include "kcxvar/homerow_sym(s_swap_lfsh)"
+    include "kcxvar/homerow_sym(arrow_becomes_hjkl)"
+    include "kcxvar/homerow_sym(d_becomes_delete)"
+    include "kcxvar/homerow_sym(a_becomes_home)"
+    include "kcxvar/homerow_sym(e_becomes_end)"
+    include "kcxvar/homerow_sym(i_becomes_insert)"
+    include "kcxvar/homerow_sym(u_becomes_capslock)"
+    include "kcxvar/homerow_sym(s_becomes_lfsh)"
 };

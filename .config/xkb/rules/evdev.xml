@@ -70,50 +70,50 @@
       </option>
       <option>
           <configItem>
-              <name>kcx/homerow_sym:arrow_swap_hjkl</name>
-              <description>Arrow keys swap with HJKL</description>
-          </configItem>
-      </option>
-      <option>
-          <configItem>
-              <name>kcx/homerow_sym:d_swap_delete</name>
-              <description>D swaps with Delete</description>
-          </configItem>
-      </option>
-      <option>
-          <configItem>
-              <name>kcx/homerow_sym:a_swap_home</name>
-              <description>A swaps with Home</description>
-          </configItem>
-      </option>
-      <option>
-          <configItem>
-              <name>kcx/homerow_sym:e_swap_end</name>
-              <description>E swaps with End</description>
-          </configItem>
-      </option>
-      <option>
-          <configItem>
               <name>kcx/homerow_sym:t_swap_tab</name>
               <description>T swaps with Tab</description>
           </configItem>
       </option>
       <option>
           <configItem>
-              <name>kcx/homerow_sym:i_swap_insert</name>
-              <description>I swaps with Insert</description>
+              <name>kcx/homerow_sym:arrow_becomes_hjkl</name>
+              <description>Arrow keys become HJKL</description>
           </configItem>
       </option>
       <option>
           <configItem>
-              <name>kcx/homerow_sym:u_swap_capslock</name>
-              <description>U swaps with Caps Lock</description>
+              <name>kcx/homerow_sym:d_becomes_delete</name>
+              <description>D becomes Delete</description>
           </configItem>
       </option>
       <option>
           <configItem>
-              <name>kcx/homerow_sym:s_swap_lfsh</name>
-              <description>S swaps with Left Shift</description>
+              <name>kcx/homerow_sym:a_becomes_home</name>
+              <description>A becomes Home</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:e_becomes_end</name>
+              <description>E becomes End</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:i_becomes_insert</name>
+              <description>I becomes Insert</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:u_becomes_capslock</name>
+              <description>U becomes Caps Lock</description>
+          </configItem>
+      </option>
+      <option>
+          <configItem>
+              <name>kcx/homerow_sym:s_becomes_lfsh</name>
+              <description>S becomes Left Shift</description>
           </configItem>
       </option>
     </group>

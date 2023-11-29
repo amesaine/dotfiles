@@ -12,13 +12,10 @@ Layouts
 -------
 
 ### KCX (Qwerty)
-![KCX (Qwerty) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-qwerty.webp)
+![KCX (Qwerty) Layout Picture][kcx-qwerty-pic]
 
 ### KCX (Homerow Symbols)
-![KCX (Homerow Symbols) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-homerow-symbols.webp)
-
-> [!NOTE]
-> Other keys are omitted from the picture, but all keys have been swapped with their counterparts. (e.g. Arrow keys become HJKL)
+![KCX (Homerow Symbols) Layout Picture][kcx-homerow-symbols-pic]
 
 Quickstart
 ----------
@@ -68,7 +65,7 @@ FAQ
 
 > Qwerty is the standard. Learning an obscure layout for speed/ergonomics is unnecessary and inconvenient. 
 On average, I type 110-135wpm which is more than enough (i flexed on ya btw). My style of touch typing
-also maximizes ergonomics. (I'll probably make a repo/wiki on this)
+also maximizes ergonomics. *(I'll probably make a repo/wiki on this)*
 
 ### Where's Right Shift?
 
@@ -84,27 +81,31 @@ of Caps Lock in QWERTY mode if it is essential.
 > Any standard keyboard will do. Flatter keyboards on laptops are better solely because it is easier
 to press the relocated Escape with the right thumb. I find that bulky spacebars often get in the way.
 
-### Copy pasting in a shell doesn't work properly only when using this config.
+### Shell copy pasting is buggy when using Homerow Symbols.
 
-> You might be doing `Control+Shift+[something]`. Instead, do `Shift+Control+[something]`.
+> You might be doing `Control+RelocatedShift+{something}`. Instead, do 
+`RelocatedShift+Control+{something}`. `Control+OriginalShift` and `OriginalShift+Control`
+should both work properly still.
 >
-> In KCX (Homerow Symbols), Shift is replaced with *[ s, S ]*. Somehow, this takes effect
-when combined with the *Control modifier* even when the layout isn't active. What's happening
-is `Control+Shift` becomes `Control+S` which sends a XOFF signal, pausing stdin. If you find
-yourself in this predicament, `Control+q` will send XON and unfreeze the shell.
+> In KCX (Homerow Symbols), S is replaced with *[ Shift_L ]*. Despite this, 
+`Control+RelocatedShift` becomes `Control+S` which sends a XOFF signal, freezing
+the shell. `Control+q` will send XON and unfreeze the shell. I haven't figured
+out how to configure it properly.
 >
-> I haven't figured out how to configure this properly so you can do one of the following to eliminate this altogether:
-> - Inside `$HOME/xkb/symbols/kcxvar/homerow_sym`, delete `replace key <LFSH> { [ s, S ] };`
-> - Follow this [solution][xoff/xonn] if you want to still swap the keys.
+> In the meantime, XOFF/XON can be disabled  entirely by adding `stty -ixon` to 
+`~/.bashrc` or `~/.zshrc`. To unfreeze the shell using any key, add `stty ixany` 
+instead. [(source)][xoff/xon]
 
-### Can I still use this with another layout? (e.g. Dvorak, Colemak)
-> Yes. The remaps target actual key placement, not the represented symbols. Inside `$HOME/xkb/symbols/kcx`,
+### Can I use a different base layout? (e.g. Dvorak, Colemak)
+
+> Yes. The remaps target key codes (keyboard location), not the represented 
+symbols. The base layout can be changed inside `$HOME/xkb/symbols/kcx`:
 > ```
 > include "us(basic)" // replace this
 > include "us(dvorak)" // with this
 > ```
-> Note that the xkb_option names will not automatically reflect the actual symbols they are remapping. It assumes
-> Qwerty as the base layout.
+> *Note that the layout, variant, and option labels are hardcoded which won't
+automatically reflect the actual symbols they are remapping.*
 
 Resources
 ---------
@@ -125,15 +126,12 @@ Acknowledgement
 ---------------
 
 ### Keyboard Layout Pictures
-- Created with [keyboard-layout-editor.com][keyboard-layout-editor]. JSON for all layouts are available in
-[assets][assets].
-- Upscaled with AI. (Because SVG export doesn't work properly and the project is unmaintained)
+- Created with [keyboard-layout-editor.com][keyboard-layout-editor]. 
+- JSON for all layouts are available in [assets][assets].
 
+[kcx-qwerty-pic]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-qwerty.png
+[kcx-homerow-symbols-pic]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-homerow-symbols.png
 [sway-kbfb]: https://github.com/jnzigg/dotfiles/blob/master/bin/sway-kbfb
-
 [xoff/xonn]: https://unix.stackexchange.com/a/12108/593070
-[gnome-add-input-source]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-add-input-source.webp
-[gnome-switch-layout-shortcut]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-switch-layout-shortcut.webp
-[gnome-tweaks]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-tweaks.webp
 [keyboard-layout-editor]: http://www.keyboard-layout-editor.com/
 [assets]: https://github.com/jnzigg/dotfiles/tree/master/.config/xkb/assets
