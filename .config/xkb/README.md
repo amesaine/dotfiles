@@ -139,6 +139,6 @@ Acknowledgement
 [kcx-qwerty-pic]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-qwerty.png
 [kcx-homerow-symbols-pic]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-homerow-symbols.png
 [sway-kbfb]: https://github.com/jnzigg/dotfiles/blob/master/bin/sway-kbfb
-[xoff/xonn]: https://unix.stackexchange.com/a/12108/593070
+[xoff/xon]: https://unix.stackexchange.com/a/12108/593070
 [keyboard-layout-editor]: http://www.keyboard-layout-editor.com/
 [assets]: https://github.com/jnzigg/dotfiles/tree/master/.config/xkb/assets
