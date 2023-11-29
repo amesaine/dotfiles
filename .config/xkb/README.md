@@ -99,7 +99,7 @@ instead. [(source)][xoff/xon]
 ### Can I use a different base layout? (e.g. Dvorak, Colemak)
 
 > Yes. The remaps target key codes (keyboard location), not the represented 
-symbols. The base layout can be changed inside `$HOME/xkb/symbols/kcx`:
+symbols. The base layout can be changed inside `$HOME/.config/xkb/symbols/kcx`:
 > ```
 > include "us(basic)" // replace this
 > include "us(dvorak)" // with this
