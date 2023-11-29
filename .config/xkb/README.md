@@ -93,7 +93,7 @@ when combined with the *Control modifier* even when the layout isn't active. Wha
 is `Control+Shift` becomes `Control+S` which sends a XOFF signal, pausing stdin. If you find
 yourself in this predicament, `Control+q` will send XON and unfreeze the shell.
 >
-> I haven't figured out how to configure this properly so you can do one of the following to eliminate ths altogether:
+> I haven't figured out how to configure this properly so you can do one of the following to eliminate this altogether:
 > - Delete the line in homerow_sym which replaces the shift key with S.
 > - Follow this [solution][xoff/xonn]
 
