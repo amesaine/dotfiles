@@ -81,7 +81,7 @@ of Caps Lock in QWERTY mode if it is essential.
 > Any standard keyboard will do. Flatter keyboards on laptops are better solely because it is easier
 to press the relocated Escape with the right thumb. I find that bulky spacebars often get in the way.
 
-### Shell copy pasting is buggy when using Homerow Symbols.
+### Copy Pasting in shell is buggy when using Homerow Symbols.
 
 > You might be doing `Control+RelocatedShift+{something}`. Instead, do 
 `RelocatedShift+Control+{something}`. `Control+OriginalShift` and `OriginalShift+Control`
@@ -89,8 +89,8 @@ should both work properly still.
 >
 > In KCX (Homerow Symbols), S is replaced with *[ Shift_L ]*. Despite this, 
 `Control+RelocatedShift` becomes `Control+S` which sends a XOFF signal, freezing
-the shell. `Control+q` will send XON and unfreeze the shell. I haven't figured
-out how to configure it properly.
+the shell. `Control+q` will send XON and unfreeze the shell. There's probably a
+way to configure this properly to prevent such behavior but eh...
 >
 > In the meantime, XOFF/XON can be disabled  entirely by adding `stty -ixon` to 
 `~/.bashrc` or `~/.zshrc`. To unfreeze the shell using any key, add `stty ixany` 
@@ -104,12 +104,15 @@ symbols. The base layout can be changed inside `$HOME/xkb/symbols/kcx`:
 > include "us(basic)" // replace this
 > include "us(dvorak)" // with this
 > ```
-> *Note that the layout, variant, and option labels are hardcoded which won't
-automatically reflect the actual symbols they are remapping.*
+
+> [!NOTE]
+> Layout, variant, and option labels are hardcoded so they won't
+automatically reflect the actual symbols they are remapping. In Dvorak,
+> `kcxvar/homerow_sym(d_becomes_delete)` turns your `E` into `Delete`.
 
 ### Does this apply to TTY as well?
-> No. And I don't recommend doing anything this complicated to your tty
-> settings... *here be dragons*
+> No. And I don't recommend doing anything this complicated to your TTY
+> settings... ***here be dragons***
 
 Resources
 ---------
