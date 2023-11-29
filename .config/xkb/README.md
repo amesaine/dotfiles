@@ -82,7 +82,7 @@ of Caps Lock in QWERTY mode if it is essential.
 ### Do I need a special keyboard for this?
 
 > Any standard keyboard will do. Flatter keyboards on laptops are better solely because it is easier
-to press the relocated Escape with the right thumb.
+to press the relocated Escape with the right thumb. I find that buklky spacebars often get in the way.
 
 ### Copy pasting in a shell doesn't work properly only when using this config.
 
