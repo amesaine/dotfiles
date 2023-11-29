@@ -2,6 +2,9 @@ dotfiles
 ========
 thy dots and scripts
 
+There's a comprehensive README for these aspects of my config:
+1. [Keyboard Layout Configuration (XKB)][xkb]
+
 TODO
 ----
 - [ ] icons in waybar
@@ -75,3 +78,4 @@ Theming
 [bright_cyan]: https://dummyimage.com/15x15/BCF4F5/fff.png&text=+ 
 [bright_white]: https://dummyimage.com/15x15/FFFFFF/fff.png&text=+ 
 
+[xkb]: https://github.com/jnzigg/dotfiles/tree/master/.config/xkb
