@@ -67,7 +67,7 @@ FAQ
 
 > Qwerty is the standard. Learning an obscure layout for speed/ergonomics is unnecessary and inconvenient. 
 On average, I type 110-135wpm which is more than enough (i flexed on ya btw). My style of touch typing
-also maximizes ergonomics.
+also maximizes ergonomics. (I'll probably make a repo/wiki on this)
 
 
 ### Where's Right Shift?
