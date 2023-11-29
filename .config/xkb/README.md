@@ -97,6 +97,13 @@ yourself in this predicament, `Control+q` will send XON and unfreeze the shell.
 > - Delete the line in homerow_sym which replaces the shift key with S.
 > - Follow this [solution][xoff/xonn]
 
+### Can I still use this with another layout? (e.g. Dvorak, Colemak)
+> Yes. The remaps target actual key placement, not the represented symbols. Inside `$HOME/xkb/symbols/kcx`,
+> ```
+> include "us(basic)" // replace this
+> include "us(dvorak)" // with this
+> ```
+> Note that the xkb_option names will not automatically reflect the actual symbols they are remapping.
 
 
 Resources
