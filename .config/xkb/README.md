@@ -3,9 +3,9 @@ KCX Qwerty - Keyboard-Centric Experience
 
 QWERTY variant for a keyboard-centric and mouseless desktop experience.
 
-KCX Qwerty is a variant made to streamline keyboard shortcut usage with laptops, touch typists, vim users, and terminal
-hobbits in mind. Additional layouts are included to take
-advantage of keyboard layout switching. 
+KCX Qwerty is a variant made to streamline keyboard shortcut usage with laptops, touch typists, 
+vim users, and terminal hobbits in mind. Additional layouts are provided to take advantage 
+of keyboard layout switching. 
 
 Layouts
 -------
