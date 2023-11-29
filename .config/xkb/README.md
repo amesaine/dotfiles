@@ -81,6 +81,17 @@ of Caps Lock in QWERTY mode if it is essential.
 > Any standard keyboard will do. Flatter keyboards on laptops are better solely because it is easier
 to press the relocated Escape with the right thumb.
 
+### Copy pasting in a shell doesn't work properly only when using this config.
+
+> You might be doing `Control+Shift+[something]`. Instead, do `Shift+Control+[something]`. In KCX (Homerow Symbols),
+shift is replaced with *[ s, S ]*. Somehow, this takes effect when combined with the *Control modifier* even
+when the layout isn't active. What's happening is `Control+Shift` becomes `Control+S` which
+sends a XOFF signal, pausing stdin. If you find yourself in this predicament, Control+q will send XON
+and unfreeze the shell.
+I haven't figured out how to configure this properly so you can do one of the following to eliminate ths altogether:
+> - Delete the line in homerow_sym which replaces the shift key with S.
+> - Follow this [solution][xoff/xonn]
+
 
 
 Resources
@@ -99,6 +110,8 @@ Resources
 [Youtube video where I discovered the blog posts from](https://www.youtube.com/watch?v=utqpa_8SXkA)
 
 [sway-kbfb]: https://github.com/jnzigg/dotfiles/blob/master/bin/sway-kbfb
+
+[xoff/xonn]: https://unix.stackexchange.com/a/12108/593070
 [gnome-add-input-source]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-add-input-source.webp
 [gnome-switch-layout-shortcut]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-switch-layout-shortcut.webp
 [gnome-tweaks]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-tweaks.webp
