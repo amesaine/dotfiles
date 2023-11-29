@@ -103,7 +103,8 @@ yourself in this predicament, `Control+q` will send XON and unfreeze the shell.
 > include "us(basic)" // replace this
 > include "us(dvorak)" // with this
 > ```
-> Note that the xkb_option names will not automatically reflect the actual symbols they are remapping.
+> Note that the xkb_option names will not automatically reflect the actual symbols they are remapping. It assumes
+> Qwerty as the base layout.
 
 
 Resources
