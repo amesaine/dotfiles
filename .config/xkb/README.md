@@ -112,9 +112,19 @@ Resources
 
 [Youtube video where I discovered the blog posts from](https://www.youtube.com/watch?v=utqpa_8SXkA)
 
+Acknowledgement
+---------------
+
+### Keyboard Layout Pictures
+- Created with [keyboard-layout-editor.com][keyboard-layout-editor]. JSON for all layouts are available in
+[assets][assets].
+- Upscaled with AI. (Because SVG export doesn't work properly and the project is unmaintained)
+
 [sway-kbfb]: https://github.com/jnzigg/dotfiles/blob/master/bin/sway-kbfb
 
 [xoff/xonn]: https://unix.stackexchange.com/a/12108/593070
 [gnome-add-input-source]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-add-input-source.webp
 [gnome-switch-layout-shortcut]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-switch-layout-shortcut.webp
 [gnome-tweaks]: https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/gnome-tweaks.webp
+[keyboard-layout-editor]: http://www.keyboard-layout-editor.com/
+[assets]: https://github.com/jnzigg/dotfiles/tree/master/.config/xkb/assets
