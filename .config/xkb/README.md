@@ -69,7 +69,6 @@ FAQ
 On average, I type 110-135wpm which is more than enough (i flexed on ya btw). My style of touch typing
 also maximizes ergonomics. (I'll probably make a repo/wiki on this)
 
-
 ### Where's Right Shift?
 
 > I never used it so it went bye-bye.
@@ -88,13 +87,13 @@ to press the relocated Escape with the right thumb. I find that bulky spacebars 
 
 > You might be doing `Control+Shift+[something]`. Instead, do `Shift+Control+[something]`.
 >
-> In KCX (Homerow Symbols), shift is replaced with *[ s, S ]*. Somehow, this takes effect
+> In KCX (Homerow Symbols), Shift is replaced with *[ s, S ]*. Somehow, this takes effect
 when combined with the *Control modifier* even when the layout isn't active. What's happening
 is `Control+Shift` becomes `Control+S` which sends a XOFF signal, pausing stdin. If you find
 yourself in this predicament, `Control+q` will send XON and unfreeze the shell.
 >
 > I haven't figured out how to configure this properly so you can do one of the following to eliminate this altogether:
-> - Delete the line in homerow_sym which replaces the shift key with S.
+> - Inside `$HOME/xkb/symbols/kcxvar/homerow_sym`, delete `replace key <LFSH> { [ s, S ] };`
 > - Follow this [solution][xoff/xonn]
 
 ### Can I still use this with another layout? (e.g. Dvorak, Colemak)
