@@ -16,6 +16,9 @@ Layouts
 ### KCX (Homerow Symbols)
 ![KCX (Homerow Symbols) Layout Picture](https://github.com/jnzigg/dotfiles/blob/master/.config/xkb/assets/kcx-homerow-symbols.webp)
 
+> [!NOTE]
+> Other keys are omitted from the picture, but all keys have been swapped with their counterparts. (e.g. Arrow keys become HJKL)
+
 Quickstart
 ----------
 ### Installation
