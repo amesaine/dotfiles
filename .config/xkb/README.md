@@ -94,7 +94,7 @@ yourself in this predicament, `Control+q` will send XON and unfreeze the shell.
 >
 > I haven't figured out how to configure this properly so you can do one of the following to eliminate this altogether:
 > - Inside `$HOME/xkb/symbols/kcxvar/homerow_sym`, delete `replace key <LFSH> { [ s, S ] };`
-> - Follow this [solution][xoff/xonn]
+> - Follow this [solution][xoff/xonn] if you want to still swap the keys.
 
 ### Can I still use this with another layout? (e.g. Dvorak, Colemak)
 > Yes. The remaps target actual key placement, not the represented symbols. Inside `$HOME/xkb/symbols/kcx`,
