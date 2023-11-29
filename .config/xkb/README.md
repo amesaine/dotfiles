@@ -23,14 +23,14 @@ Quickstart
 ----------
 ### Installation
 ```
-git clone -n --depth=1 --filter=tree:0 https://github.com/jnzigg/dotfiles
+git clone --no-checkout --depth=1 --filter=tree:0 https://github.com/jnzigg/dotfiles
 cd dotfiles
 git sparse-checkout set --no-cone .config/xkb
 git checkout
-mkdir -p $HOME/.config/xkb/rules
-mkdir -p $HOME/.config/xkb/symbols
-cp -r -S .bak .config/xkb/rules/* $HOME/.config/xkb/rules/
-cp -r -S .bak .config/xkb/symbols/* $HOME/.config/xkb/symbols/
+mkdir --parents $HOME/.config/xkb/rules
+mkdir --parents $HOME/.config/xkb/symbols
+cp --recursive --suffix=.bak .config/xkb/rules/* $HOME/.config/xkb/rules/
+cp --recursive --suffix=.bak .config/xkb/symbols/* $HOME/.config/xkb/symbols/
 ```
 > [!NOTE]
 > This will overwrite existing destination files. Your original files such as *evdev.xml*
