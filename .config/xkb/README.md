@@ -107,6 +107,10 @@ symbols. The base layout can be changed inside `$HOME/xkb/symbols/kcx`:
 > *Note that the layout, variant, and option labels are hardcoded which won't
 automatically reflect the actual symbols they are remapping.*
 
+### Does this apply to TTY as well?
+> No. And I don't recommend doing anything this complicated to your tty
+> settings... *here be dragons*
+
 Resources
 ---------
 
