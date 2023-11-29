@@ -3,9 +3,10 @@ KCX Qwerty - Keyboard-Centric Experience
 
 QWERTY variant for a keyboard-centric and mouseless desktop experience.
 
-KCX Qwerty is a variant made to streamline keyboard shortcut usage with laptops, touch typists, 
-vim users, and terminal hobbits in mind. Additional layouts are provided to take advantage 
-of keyboard layout switching. 
+- Streamlines keyboard shortcut usage with laptops, touch typists, 
+vim users, and terminal hobbits in mind.
+- Emulate vim motions ***everywhere***
+- Additional layouts are provided to take advantage of keyboard layout switching. 
 
 Layouts
 -------
@@ -104,7 +105,6 @@ yourself in this predicament, `Control+q` will send XON and unfreeze the shell.
 > ```
 > Note that the xkb_option names will not automatically reflect the actual symbols they are remapping. It assumes
 > Qwerty as the base layout.
-
 
 Resources
 ---------
