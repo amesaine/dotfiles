@@ -86,12 +86,14 @@ to press the relocated Escape with the right thumb.
 
 ### Copy pasting in a shell doesn't work properly only when using this config.
 
-> You might be doing `Control+Shift+[something]`. Instead, do `Shift+Control+[something]`. In KCX (Homerow Symbols),
-shift is replaced with *[ s, S ]*. Somehow, this takes effect when combined with the *Control modifier* even
-when the layout isn't active. What's happening is `Control+Shift` becomes `Control+S` which
-sends a XOFF signal, pausing stdin. If you find yourself in this predicament, `Control+q` will send XON
-and unfreeze the shell.
-I haven't figured out how to configure this properly so you can do one of the following to eliminate ths altogether:
+> You might be doing `Control+Shift+[something]`. Instead, do `Shift+Control+[something]`.
+>
+> In KCX (Homerow Symbols), shift is replaced with *[ s, S ]*. Somehow, this takes effect
+when combined with the *Control modifier* even when the layout isn't active. What's happening
+is `Control+Shift` becomes `Control+S` which sends a XOFF signal, pausing stdin. If you find
+yourself in this predicament, `Control+q` will send XON and unfreeze the shell.
+>
+> I haven't figured out how to configure this properly so you can do one of the following to eliminate ths altogether:
 > - Delete the line in homerow_sym which replaces the shift key with S.
 > - Follow this [solution][xoff/xonn]
 
