@@ -102,8 +102,8 @@ include "us(basic)" // replace this
 include "us(dvorak)" // with this
 ```
 
-[!NOTE]
-Layout, variant, and option labels are hardcoded so they won't
+> [!NOTE]
+> layout, variant, and option labels are hardcoded so they won't
 automatically reflect the actual symbols they are remapping. In Dvorak,
 `kcxvar/homerow_sym(d_becomes_delete)` turns your `E` into `Delete`.
 
