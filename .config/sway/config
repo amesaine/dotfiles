@@ -96,6 +96,7 @@ mode "resize" {
     bindsym $left resize shrink width 100px
     bindsym $down resize grow height 100px
     bindsym $up resize shrink height 100px
+    bindsym $right resize grow width 100px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
