@@ -49,11 +49,11 @@ bindsym Control+semicolon exec swaymsg input $kb xkb_switch_layout next
 You can use my [bash script][sway-kbfb] if you want to change focused window border colors when switching layouts.
 
 ```
-    set $lay1_n "KCX (Qwerty)"
-    set $lay1_c "$green $green $green $white $green"
-    set $lay2_n "KCX (Homerow Symbols)"
-    set $lay2_c "$red $red $red $white $red"
-    bindsym Control+semicolon exec sway-kbfb $kb $lay1_n $lay1_c $lay2_n $lay2_c
+set $lay1_n "KCX (Qwerty)"
+set $lay1_c "$green $green $green $white $green"
+set $lay2_n "KCX (Homerow Symbols)"
+set $lay2_c "$red $red $red $white $red"
+bindsym Control+semicolon exec sway-kbfb $kb $lay1_n $lay1_c $lay2_n $lay2_c
 ```
 
 
