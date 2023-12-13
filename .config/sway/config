@@ -15,7 +15,7 @@ set $right l
 # system 
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
+bindsym $mod+Control+Shift+x exit
 
 # terminal
 set $term foot
@@ -37,6 +37,7 @@ include /etc/sway/config-vars.d/*
 output * bg /home/jnzig/MyBackup/others/wallpaper/syuo_dracula.png fill
 
 # Navigation
+
     # focus
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
@@ -49,15 +50,22 @@ output * bg /home/jnzig/MyBackup/others/wallpaper/syuo_dracula.png fill
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
 
+    # swap windows
+    bindsym $mod+Control+$left exec sway-anchor swap left
+    bindsym $mod+Control+$down exec sway-anchor swap down
+    bindsym $mod+Control+$up exec sway-anchor swap up
+    bindsym $mod+Control+$right exec sway-anchor swap right
+
     # workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
     bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace fullscreen-gaps
 
     # move focused window to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+1 move container to workspace number 1, workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2, workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3, workspace number 3
 
 #
 # Layout stuff:
@@ -72,7 +80,8 @@ output * bg /home/jnzig/MyBackup/others/wallpaper/syuo_dracula.png fill
     bindsym $mod+e layout toggle split
 
     # fullscreen
-    bindsym $mod+f fullscreen
+    bindsym $mod+f exec sway-fullscreen-gaps
+    bindsym $mod+Shift+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -98,8 +107,7 @@ mode "resize" {
     bindsym $up resize shrink height 100px
     bindsym $right resize grow width 100px
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -112,9 +120,6 @@ bar {
 
 include /etc/sway/config.d/*
 
-exec_always {
-    sway-autotiling -l 2
-}
 
 #
 # screencasting
@@ -146,17 +151,12 @@ input type:touchpad {
 # keyboard
 #
     # set layouts
-    set $kb "1:1:AT_Translated_Set_2_keyboard"
-    input $kb {
+    input type:keyboard {
         xkb_layout kcx(qwerty),kcx(homerow_sym)
     }
 
     # different layouts change focused window borders
-    set $lay1_n "KCX (Qwerty)"
-    set $lay1_c "$green $green $green $white $green"
-    set $lay2_n "KCX (Homerow Symbols)"
-    set $lay2_c "$red $red $red $white $red"
-    bindsym Control+semicolon exec sway-kbfb $kb $lay1_n $lay1_c $lay2_n $lay2_c
+    bindsym Control+semicolon exec swaymsg input 1:1:AT_Translated_Set_2_keyboard xkb_switch_layout next
 
 #
 # windows
@@ -192,3 +192,15 @@ client.focused $green $green $green $white $green
 
     # audio-input
     bindsym $mod+Shift+Ctrl+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+#
+# custom
+#
+
+# sway-anchor
+bindsym $mod+Control+u exec sway-anchor state undo
+
+exec_always {
+    sway-autotiling --limit 2
+    sway-xkb-changes-border
+    sway-anchor daemon start
+}

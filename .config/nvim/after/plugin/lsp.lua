@@ -52,3 +52,14 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
+require'lspconfig'.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'E501'},
+        }
+      }
+    }
+  }
+}

@@ -37,11 +37,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Map Q to do nothing (NOP)
 vim.keymap.set("n", "Q", "<nop>")
 
--- Create a new tmux window with the "tmux-sessionizer" command
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
 -- Format code using LSP
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
 
 -- Navigate between quickfix and location lists
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
