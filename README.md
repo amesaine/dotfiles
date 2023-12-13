@@ -5,6 +5,17 @@ thy dots and scripts
 There's a comprehensive README for these aspects of my config:
 1. [Keyboard Layout Configuration (XKB)][xkb]
 
+Dotfiles Management
+-------------------
+I track my dotfiles through a git bare repository with its working directory set to the home directory.
+
+```sh
+git init --bare $HOME/.cfg
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+config config --local status.showUntrackedFiles no
+echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
+echo "*" > $HOME/.gitignore
+```
 
 Theming
 -------
@@ -70,4 +81,16 @@ Theming
 [bright_cyan]: https://dummyimage.com/15x15/BCF4F5/fff.png&text=+ 
 [bright_white]: https://dummyimage.com/15x15/FFFFFF/fff.png&text=+ 
 
+Acknowledgement
+---------------
+### Git Bare Repo
+- Found this out through [mhdzli][mhdzli]
+- The guy who might've done this first. ([source][gitbare-firstguy])
+- A much more polished resource. ([source][gitbare-polished])
+- Suggested the idea of `echo "*" > $HOME/.gitignore` so you have to force add a file. ([source][gitbare-gitignore])
+
 [xkb]: https://github.com/jnzigg/dotfiles/tree/master/.config/xkb
+[mhdzli]: https://github.com/mhdzli/dotfiles#managing-dotfiles-with-git-bare-repo
+[gitbare-firstguy]: https://news.ycombinator.com/item?id=11070797
+[gitbare-polished]: https://www.atlassian.com/git/tutorials/dotfiles
+[gitbare-gitignore]: https://coffeeaddict.dev/how-to-manage-dotfiles-with-git-bare-repo 
