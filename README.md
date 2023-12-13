@@ -5,14 +5,6 @@ thy dots and scripts
 There's a comprehensive README for these aspects of my config:
 1. [Keyboard Layout Configuration (XKB)][xkb]
 
-TODO
-----
-- [ ] icons in waybar
-- [ ] webcam suspension state in waybar
-- [ ] use golang for sway-kbfb script
-- [ ] improve bash PS1 variable readability
-- [x] evdev.xml for xkb config
-
 
 Theming
 -------
