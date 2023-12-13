@@ -199,8 +199,8 @@ client.focused $green $green $green $white $green
 # sway-anchor
 bindsym $mod+Control+u exec sway-anchor state undo
 
-exec_always {
+exec {
     sway-autotiling --limit 2
     sway-xkb-changes-border
-    sway-anchor daemon start
+    sway-anchor daemon start --limit 1
 }
