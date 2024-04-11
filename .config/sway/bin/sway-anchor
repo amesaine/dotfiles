@@ -1,0 +1,244 @@
+#!/usr/bin/env python3
+
+"""
+Copyright: jnzigg
+e-mail: jnzig@proton.me
+Project: https://github.com/jnzigg/sway-anchor
+License: GPL3
+
+Dependencies: python-i3ipc
+"""
+
+from i3ipc import Connection, Con, Event, events
+from collections import deque
+from functools import partial
+from typing import TypedDict
+from abc import ABC, abstractmethod
+import argparse
+import json
+
+
+class AnchorPair(ABC):
+    @property
+    @abstractmethod
+    def anchored(self) -> Con:
+        pass
+
+    @property
+    @abstractmethod
+    def anchor(self) -> Con:
+        pass
+
+    @abstractmethod
+    def undo(self, i3: Connection) -> None:
+        pass
+
+
+class AnchorMove:
+    def __init__(self, anchored: Con):
+        self._anchored: Con = anchored
+        self._anchored_fertile: Con = None
+        self._anchored_is_first_child: bool = None
+        self._anchor: Con = None
+        self._anchor_depth: int = None
+
+        self._anchored_fertile, origin = AnchorMove.find_fertile(self._anchored)
+        if self._anchored_fertile.type == "workspace" \
+                and len(self._anchored_fertile.nodes) == 1:
+            self._anchor = self._anchored_fertile
+            return
+
+        o_i = self._anchored_fertile.nodes.index(origin)
+        self._anchored_is_first_child = o_i == 0
+
+        if self._anchored_is_first_child:
+            self._anchor, self._anchor_depth = AnchorMove.dive(self._anchored_fertile.nodes[1], 0)
+        else:
+            self._anchor, self._anchor_depth = AnchorMove.dive(self._anchored_fertile.nodes[o_i - 1], -1)
+
+    @property
+    def anchored(self):
+        return self._anchored
+
+    @property
+    def anchor(self):
+        return self._anchor
+
+    @staticmethod
+    def find_fertile(origin: Con) -> tuple[Con, Con]:
+        fertile = origin.parent
+        while len(fertile.nodes) == 1 and fertile.type != "workspace":
+            origin = fertile
+            fertile = fertile.parent
+        return (fertile, origin)
+
+    @staticmethod
+    def dive(c: Con, i: int, depth: int = -1) -> tuple[Con, int]:
+        depth += 1
+        # c is a window
+        if c.orientation == "none":
+            return c, depth
+        return AnchorMove.dive(c.nodes[i], i, depth)
+
+    def undo(self, i3: Connection) -> None:
+        def fix_position(direction: str, times: int):
+            for _ in range(times):
+                i3.command(f'move {direction}')
+        if self._anchor.type == "workspace":
+            i3.command(f'[con_id={self._anchored.id}] move container to workspace {self._anchor.name},'
+                       f'focus')
+            return
+
+        direction = {
+            (True, "horizontal"): "left",
+            (True, "vertical"): "up",
+            (False, "horizontal"): "right",
+            (False, "vertical"): "down",
+        }
+
+        i3.command(f'[con_id={self._anchor.id}] mark --add anchor;'
+                   f'[con_id={self._anchored.id}] move container to mark anchor,'
+                   f'focus;'
+                   f'unmark anchor')
+
+        # immediate siblings
+        if self._anchored_fertile == self._anchor.parent:
+            if self._anchored_is_first_child:
+                d = direction.get((self._anchored_is_first_child, self._anchor.parent.orientation))
+                fix_position(d, 1)
+            else:
+                d = direction.get((self._anchored_is_first_child, self._anchor.parent.orientation))
+                fix_position(d, 0)
+        else:
+            if self._anchored_fertile.orientation == self._anchor.parent.orientation:
+                d = direction.get((self._anchored_is_first_child, self._anchored_fertile.orientation))
+                fix_position(d, self._anchor_depth)
+            else:
+                d = direction.get((self._anchored_is_first_child, self._anchored_fertile.orientation))
+                fix_position(d, self._anchor_depth)
+
+
+class AnchorSwap:
+    def __init__(self, anchored: Con, anchor: Con):
+        self._anchored = anchored
+        self._anchor = anchor
+
+    @property
+    def anchored(self):
+        return self._anchored
+
+    @property
+    def anchor(self):
+        return self._anchor
+
+    def undo(self, i3: Connection):
+        i3.command(f'[con_id={self._anchored.id}] focus;'
+                   f'swap container with con_id {self._anchor.id}')
+
+
+class AnchorPairManager(TypedDict):
+    anchor_pairs: deque[AnchorPair]
+    focused_cache: Con
+
+
+def swapper(direction: str, i3: Connection, apm: AnchorPairManager) -> None:
+    i3.command(f'mark --add "_swap",'
+               f'focus {direction}')
+
+    anchor = i3.get_tree().find_focused()
+    apm["anchor_pairs"].append(AnchorSwap(apm["focused_cache"], anchor))
+
+    i3.command(f'swap container with mark "_swap",'
+               f'focus {direction},'
+               f'unmark "_swap"')
+
+
+def on_focus(i3: Connection, e: events.WindowEvent, apm: AnchorPairManager) -> None:
+    apm["focused_cache"] = i3.get_tree().find_focused()
+
+
+def on_move(i3: Connection, e: events.WindowEvent, apm: AnchorPairManager):
+    apm["anchor_pairs"].append(AnchorMove(apm["focused_cache"]))
+
+
+def on_undo(i3: Connection, e: events.TickEvent, apm: AnchorPairManager) -> None:
+    if not apm["anchor_pairs"]:
+        return
+
+    ap = apm["anchor_pairs"].pop()
+    ap.undo(i3)
+
+
+def tick_event_router(i3: Connection, e: events.TickEvent, apm: AnchorPairManager):
+    if e.first:
+        return
+
+    payload = json.loads(e.payload)
+    if payload["change"] != "sway-anchor":
+        return
+
+    match payload["command"]:
+        case "undo":
+            if not apm["anchor_pairs"]:
+                return
+            i3.main_quit()
+            apm["anchor_pairs"].pop().undo(i3)
+            apm["focused_cache"] = i3.get_tree().find_focused()
+            i3.main()
+        case "pause":
+            i3.main_quit()
+        case "start":
+            i3.main()
+        case "swap":
+            swapper(payload["direction"], i3, apm)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    subparsers = parser.add_subparsers()
+
+    daemon_parser = subparsers.add_parser("daemon", help="control daemon setup")
+    daemon_parser.add_argument("start", help="start daemon")
+    daemon_parser.add_argument("-l", "--limit", type=int, default=3, help="number of states to track; default = 3")
+
+    state_parser = subparsers.add_parser("state", help="state navigation")
+    state_parser.add_argument("undo", help="restore previous state")
+
+    swap_parser = subparsers.add_parser("swap", help="builtin swap commands")
+    swap_parser.add_argument("direction", choices=["up", "down", "left", "right"], help="swap with container in specified direction")
+
+    args = parser.parse_args()
+
+    i3 = Connection()
+    if hasattr(args, "start"):
+        apm: AnchorPairManager = {"anchor_pairs": deque(maxlen=args.limit), "focused_cache": None}
+
+        on_focus_p = partial(on_focus, apm=apm)
+        i3.on(Event.WINDOW_FOCUS, on_focus_p)
+
+        on_move_p = partial(on_move, apm=apm)
+        i3.on(Event.WINDOW_MOVE, on_move_p)
+
+        tick_event_router_p = partial(tick_event_router, apm=apm)
+        i3.on(Event.TICK, tick_event_router_p)
+
+        i3.main()
+    elif hasattr(args, "undo"):
+        payload = {
+            "change": "sway-anchor",
+            "command": "undo"
+        }
+        i3.send_tick(json.dumps(payload))
+    elif hasattr(args, "direction"):
+        payload = {
+            "change": "sway-anchor",
+            "command": "swap",
+            "direction": args.direction
+        }
+        i3.send_tick(json.dumps(payload))
+
+
+if __name__ == "__main__":
+    main()
+
+

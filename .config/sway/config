@@ -1,144 +1,124 @@
-# figure out what to do with arrow keys
 
-# color palette
+output * bg /home/jnzig/MyBackup/others/wallpaper/syuo_dracula.png fill
+
+# dracula color palette
+set $background #282A36
+set $background2 #44475A
 set $green #50FA7B
 set $red #FF5555
 set $white #F8F8F2 
+set $blue #6272A4
+set $cyan #8BE9FD
+set $orange #FFB86C
+set $pink #FF79C6
+set $purple #BD93F9
+set $yellow #F1FA8C
+
 
 # base keybinds
 set $mod Mod4
-set $left h
-set $down j
-set $up k
-set $right l
+set $numlayer Mod5
+set $left left
+set $down down
+set $up up
+set $right right
 
 # system 
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Control+Shift+x exit
 
+# displays
+set $laptop eDP-1
+set $television 'Sony SONY TV 0x00000101'
+
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+output HDMI-A-2 pos 0 0
+output eDP-1 pos 0 1080
+
 # terminal
 set $term foot
-bindsym $mod+t exec $term
+set $browser_workspace 1
+set $terminal_workspace 2
 
-#
-# application launcher
-#
-    # run desktop applications
-    set $menu tofi-drun | xargs swaymsg exec --
-    bindsym $mod+d exec $menu
-    # run binaries
-    set $menu2 tofi-run | xargs swaymsg exec --
-    bindsym $mod+Shift+d exec $menu2
+bindsym $mod+Control+s exec $term zsh -c "tmux new -A -s default", workspace $terminal_workspace
+bindsym $mod+n exec alacritty, workspace $terminal_workspace 
+bindsym $mod+s workspace $terminal_workspace
+
+bindsym $mod+r workspace $browser_workspace
+bindsym $mod+Control+r workspace $browser_workspace, exec brave-browser --profile-directory="Default"
+bindsym $mod+Control+p workspace $browser_workspace, exec brave-browser --profile-directory="Profile 1"
+
+assign [app_id="foot"] workspace $terminal_workspace
+assign [app_id="Alacritty"] workspace $terminal_workspace
+assign [title="Brave"] workspace $browser_workspace
+assign [app_id="firefox"] workspace $browser_workspace
+
+set $menu_desktop tofi-drun --ascii-input true | xargs swaymsg exec --
+bindsym $mod+d exec $menu_desktop
+set $menu_bin tofi-run --ascii-input true | xargs swaymsg exec --
+bindsym $mod+Shift+d exec $menu_bin
+bindsym $mod+w exec sway-tofi-focus
 
 include /etc/sway/config-vars.d/*
 
-# wallpaper
-output * bg /home/jnzig/MyBackup/others/wallpaper/syuo_dracula.png fill
 
 # Navigation
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
-    # focus
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
-    # move focused window
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-
-    # swap windows
-    bindsym $mod+Control+$left exec sway-anchor swap left
-    bindsym $mod+Control+$down exec sway-anchor swap down
-    bindsym $mod+Control+$up exec sway-anchor swap up
-    bindsym $mod+Control+$right exec sway-anchor swap right
-
-    # workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace fullscreen-gaps
-
-    # move focused window to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1, workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2, workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3, workspace number 3
+bindsym $mod+1 workspace 3
+bindsym $mod+2 workspace 4
+bindsym $mod+3 workspace 5
+# bindsym $mod+f workspace fullscreen-gaps
 
 #
 # Layout stuff:
 #
-    # split direction
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+# fullscreen
+# bindsym $mod+Shift+f exec sway-fullscreen-gaps
+bindsym $mod+f fullscreen
 
-    # Switch the current container between different layout styles
-    bindsym $mod+Shift+minus layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
 
-    # fullscreen
-    bindsym $mod+f exec sway-fullscreen-gaps
-    bindsym $mod+Shift+f fullscreen
+# Swap focus between the tiling area and the floating area
+# bindsym $mod+space focus mode_toggle
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
-
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
-
-#
 # Scratchpad:
-#
-bindsym $mod+Shift+s move scratchpad
-bindsym $mod+s scratchpad show
+bindsym $mod+Shift+g move scratchpad
+bindsym $mod+g scratchpad show
 
 #
 # Resizing containers:
 #
-mode "resize" {
-    bindsym $left resize shrink width 100px
-    bindsym $down resize grow height 100px
-    bindsym $up resize shrink height 100px
-    bindsym $right resize grow width 100px
+bindsym $mod+Control+$left resize shrink width 250px
+bindsym $mod+Control+$down resize grow height 250px
+bindsym $mod+Control+$up resize shrink height 250px
+bindsym $mod+Control+$right resize grow width 250px
 
-    bindsym $mod+r mode "default"
-}
-bindsym $mod+r mode "resize"
-
-#
-# Status Bar:
-#
-bar {
-    swaybar_command waybar
-}
+bar swaybar_command waybar
 
 include /etc/sway/config.d/*
 
-
-#
-# screencasting
-#
-exec dbus-update-activation-environment --systemd DISPLAY XAUTHORITY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-
-#
-# mouse / cusrsor
-#
+# mouse / cursor
 focus_follows_mouse no
-mouse_warping container
-input type:mouse {
+    mouse_warping container
+    input type:mouse {
     accel_profile flat
     pointer_accel 0.5
 }
 
-#
 # touchpad
-#
 input type:touchpad {
     tap enabled
     natural_scroll enabled
@@ -147,60 +127,47 @@ input type:touchpad {
 }
 
 
-#
 # keyboard
-#
-    # set layouts
-    input type:keyboard {
-        xkb_layout kcx(qwerty),kcx(homerow_sym)
-    }
+input type:keyboard {
+    xkb_layout colejak(default)
+}
 
-    # different layouts change focused window borders
-    bindsym Control+semicolon exec swaymsg input 1:1:AT_Translated_Set_2_keyboard xkb_switch_layout next
-
-#
 # windows
-#
-gaps inner 8
+smart_borders on
 default_border pixel 3
 focus_on_window_activation focus
 popup_during_fullscreen leave_fullscreen
-client.focused $green $green $green $white $green 
+client.focused $green $green $green $green $green 
 
-#
 # screenshot
-#
-    # copy to clipboard
-    bindsym Print exec grimshot copy area
-    bindsym Control+Print exec grimshot save area
+# copy to clipboard
+bindsym Print exec grimshot copy area
+bindsym Control+Print exec grimshot save area
 
-    # save to file
-    bindsym Shift+Print exec grimshot copy output
-    bindsym Control+Shift+Print exec grimshot save output
+# save to file
+bindsym Shift+Print exec grimshot copy output
+bindsym Shift+Control+Print exec grimshot save output
 
-#
 # function keys
-#
-    # brightness
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set +5%
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+# brightness
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 
-    # audio-output
-    bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%- -l 1.2
-    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+ -l 1.2
+# audio-output
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%- -l 1.2
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+ -l 1.2
 
-    # audio-input
-    bindsym $mod+Shift+Ctrl+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-#
-# custom
-#
+# audio-input
+bindsym $mod+Shift+Ctrl+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
-# sway-anchor
-bindsym $mod+Control+u exec sway-anchor state undo
+bindsym $mod+t exec warpd --hint
 
 exec {
     sway-autotiling --limit 2
     sway-xkb-changes-border
-    sway-anchor daemon start --limit 1
+    # sway-anchor daemon start --limit 1
+    $term zsh -c "tmux new -A -s default"
+    exec brave-browser --profile-directory="Default"
+    swaymsg workspace $terminal_workspace
 }

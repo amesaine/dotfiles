@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+change_color() {
+    case $1 in 
+        "KCX (Qwerty)")
+            swaymsg client.focused "#50FA7B #50FA7B #50FA7B #F8F8F2"
+            ;;
+        "KCX (Homerow Symbols)")
+            swaymsg client.focused "#FF5555 #FF5555 #FF5555 #F8F8F2"
+            ;;
+    esac
+}
+
+swaymsg -t subscribe '["input"]' -m \
+    | jq -r --unbuffered 'select(.change == "xkb_layout").input.xkb_active_layout_name' \
+    | while read layout; do change_color "$layout"; done
+
+
