@@ -1,19 +1,27 @@
 #!/bin/sh
 
 if [ "$1" = "desktop" ]; then
-    to_run="tofi-drun"
+    runner="tofi-drun"
 elif [ "$1" = "binary" ]; then
-    to_run="tofi-run"
+    runner="tofi-run"
+else
+    exit 1
 fi
 
 swaymsg -t get_tree | 
     jq -r 'recurse(.nodes[]) | 
-    select((.type == "workspace") and (.name | test("^[0-9]+$"))) |
+        select((.type == "workspace") and (.name | test("^[0-9]+$"))) |
         .name' |
     sort -n |
     tail -n 1 |
     awk '{printf "swaymsg workspace %d\n", $1 + 1}' | 
-    sh | 
-    $to_run |
-    xargs swaymsg exec --
+    sh
 
+to_run=$($runner)
+
+if [ -z "$to_run" ]; then
+    swaymsg workspace back_and_forth
+    exit 1
+else
+    echo "$to_run" | xargs swaymsg exec --
+fi
