@@ -1,4 +1,5 @@
-vim.opt.guicursor = ""
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -14,7 +15,7 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
@@ -30,3 +31,6 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.mouse = ""
+
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
