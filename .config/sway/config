@@ -55,22 +55,24 @@ assign [app_id="Alacritty"] workspace $terminal_workspace
 assign [title="Brave"] workspace $browser_workspace
 assign [app_id="firefox"] workspace $browser_workspace
 
+bindsym $mod+d exec sway-open-in-new-wspace desktop
 set $menu_desktop tofi-drun --ascii-input true | xargs swaymsg exec --
-bindsym $mod+d exec $menu_desktop
+bindsym $mod+Shift+d exec $menu_desktop
+
+
+bindsym $mod+b exec sway-open-in-new-wspace binary
 set $menu_bin tofi-run --ascii-input true | xargs swaymsg exec --
-bindsym $mod+Shift+d exec $menu_bin
+bindsym $mod+Shift+b exec $menu_bin
 bindsym $mod+w exec sway-tofi-focus
 
 include /etc/sway/config-vars.d/*
 
 
-# Navigation
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# move focused window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
@@ -81,9 +83,6 @@ bindsym $mod+2 workspace 4
 bindsym $mod+3 workspace 5
 # bindsym $mod+f workspace fullscreen-gaps
 
-#
-# Layout stuff:
-#
 # fullscreen
 # bindsym $mod+Shift+f exec sway-fullscreen-gaps
 bindsym $mod+f fullscreen
@@ -169,5 +168,3 @@ exec {
     # sway-anchor daemon start --limit 1
     $term zsh -c "tmux new -A -s default"
     exec brave-browser --profile-directory="Default"
-    swaymsg workspace $terminal_workspace
-}
