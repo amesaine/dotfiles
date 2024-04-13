@@ -1,4 +1,3 @@
-
 output * bg /home/jnzig/MyBackup/others/wallpaper/syuo_dracula.png fill
 
 # dracula color palette
@@ -162,9 +161,14 @@ bindsym $mod+Shift+Ctrl+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 bindsym $mod+t exec warpd --hint
 
+# DO NOT TOUCH
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 exec {
     sway-autotiling --limit 2
     sway-xkb-changes-border
     # sway-anchor daemon start --limit 1
     $term zsh -c "tmux new -A -s default"
     exec brave-browser --profile-directory="Default"
+    swaymsg workspace $terminal_wokspace
+    }
