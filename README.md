@@ -87,9 +87,9 @@ Acknowledgement
 - Found this out through [mhdzli][mhdzli]
 - The guy who might've done this first. ([source][gitbare-firstguy])
 - A much more polished resource. ([source][gitbare-polished])
-- Suggested the idea of `echo "*" > $HOME/.gitignore` so you have to force add a file. ([source][gitbare-gitignore])
+- Suggested `echo "*" > $HOME/.gitignore` so you have to force add files. ([source][gitbare-gitignore])
 
-[xkb]: https://github.com/jnzigg/dotfiles/tree/master/.config/xkb
+[xkb]: https://github.com/amesaine/colejak
 [mhdzli]: https://github.com/mhdzli/dotfiles#managing-dotfiles-with-git-bare-repo
 [gitbare-firstguy]: https://news.ycombinator.com/item?id=11070797
 [gitbare-polished]: https://www.atlassian.com/git/tutorials/dotfiles
