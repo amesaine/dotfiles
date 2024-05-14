@@ -31,10 +31,11 @@ export XCURSOR_THEME=Bibata-Modern-Ice
 export EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1
 export XDG_CURRENT_TYPE=wayland
+export RUST_BACKTRACE=1
 
+# if [ "$(tty)" = "/dev/tty1" ] ; then
+#     export XDG_CURRENT_DESKTOP=sway
+#     exec sway
+# fi
 
-if [ "$(tty)" = "/dev/tty1" ] ; then
-    export XDG_CURRENT_DESKTOP=sway
-    exec sway
-fi
-
+. "$HOME/.cargo/env"

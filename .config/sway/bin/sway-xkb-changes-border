@@ -1,5 +1,5 @@
 #!/bin/sh
-#
+
 change_color() {
     case $1 in 
         "KCX (Qwerty)")

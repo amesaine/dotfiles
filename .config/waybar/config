@@ -2,6 +2,7 @@
     "margin-top": 10,
     "margin-left": 10,
     "margin-right": 10,
+    "margin-bottom": 10,
     "spacing": 5,
     "modules-left": ["clock#date", "clock#time", "wlr/taskbar"], 
     "modules-center": ["sway/workspaces"],
@@ -15,7 +16,7 @@
         "tooltip-format": "{:%c}"
     },
     "clock#time": {
-        "format": "{:%I:%M %p}"
+        "format": "{:%H:%M %p}"
     },
     "wlr/taskbar": {
         "sort-by-app-id": true,
@@ -32,12 +33,11 @@
 
     "sway/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
+        "all-outputs": false,
         "format": "●",
         "persistent_workspaces": {
             "1":[],
             "2":[],
-            "3":[],
         }
     },
 

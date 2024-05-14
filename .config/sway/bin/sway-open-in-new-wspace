@@ -5,6 +5,7 @@ if [ "$1" = "desktop" ]; then
 elif [ "$1" = "binary" ]; then
     runner="tofi-run"
 else
+    echo no argument specified
     exit 1
 fi
 

@@ -1,9 +1,9 @@
 alias n='nvim '
 alias e='nvim .'
-alias l='swaymsg workspace 3 && neovide .'
 alias bat='batcat '
+
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias neofetch='neofetch --ascii ~/Pictures/chibi-spiderman.txt'
+
 autoload -Uz promptinit
 
 if [ -x /usr/bin/dircolors ]; then
