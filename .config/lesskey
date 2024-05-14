@@ -1,0 +1,6 @@
+#command
+\kl goto-line # left
+\e[1;2B forw-scroll # shift down 
+\e[1;2A back-scroll # shift up
+\kr goto-end # right
+h quit
