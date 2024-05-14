@@ -1,0 +1,125 @@
+
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.bright]
+black = "#555555"
+blue = "#D0B5F3"
+cyan = "#BCF4F5"
+green = "#97EDA2"
+magenta = "#E7A1D7"
+red = "#E1837F"
+white = "#FFFFFF"
+yellow = "#F6F6B6"
+
+[cursor]
+unfocused_hollow = true
+
+[colors.cursor]
+cursor = "#ffffff"
+text = "#000000"
+
+[colors.normal]
+black = "#1C1C1C"
+blue = "#BAA0E8"
+cyan = "#A7DFEF"
+green = "#87E58E"
+magenta = "#FF79C6"
+red = "#DD6E6B"
+white = "#F8F8F2"
+yellow = "#E8EDA2"
+
+[colors.primary]
+background = "#000000"
+foreground = "#F8F8F2"
+
+[font]
+builtin_box_drawing = true
+size = 15
+
+[font.normal]
+family = "0xProto"
+style = "Regular"
+
+[font.italic]
+family = "0xProto"
+style = "Italic"
+
+
+[keyboard]
+bindings = [
+{ key = "Enter", mods = "Shift", chars = "\u001B[13;2u" },
+{ key = "Enter", mods = "Control", chars = "\u001B[13;5u" },
+{ key = "Delete", chars = "\u001B[3~" },
+{ key = "Delete", mods = "Shift", chars = "\u001B[3;2u" },
+
+{ key = "Home", mode = "AppCursor", chars = "\u001BOH" },
+{ key = "Home", mode = "~AppCursor", chars = "\u001B[H" },
+{ key = "End", mode = "AppCursor", chars = "\u001BOF" },
+{ key = "End", mode = "~AppCursor", chars = "\u001B[F" },
+
+{ key = "Left", mods = "Shift", chars = "\u001B[1;2D" },
+{ key = "Left", mods = "Control", chars = "\u001B[1;5D" },
+{ key = "Left", mods = "Alt", chars = "\u001B[1;3D" },
+{ key = "Left", mode = "~AppCursor", chars = "\u001B[D" },
+{ key = "Left", mode = "AppCursor", chars = "\u001BOD" },
+
+{ key = "Right", mods = "Shift", chars = "\u001B[1;2C" },
+{ key = "Right", mods = "Control", chars = "\u001B[1;5C" },
+{ key = "Right", mods = "Alt", chars = "\u001B[1;3C" },
+{ key = "Right", mode = "~AppCursor", chars = "\u001B[C" },
+{ key = "Right", mode = "AppCursor", chars = "\u001BOC" },
+
+{ key = "Up", mods = "Shift", chars = "\u001B[1;2A" },
+{ key = "Up", mods = "Control", chars = "\u001B[1;5A" },
+{ key = "Up", mods = "Alt", chars = "\u001B[1;3A" },
+{ key = "Up", mode = "~AppCursor", chars = "\u001B[A" },
+{ key = "Up", mode = "AppCursor", chars = "\u001BOA" },
+
+{ key = "Down", mods = "Shift", chars = "\u001B[1;2B" },
+{ key = "Down", mods = "Control", chars = "\u001B[1;5B" },
+{ key = "Down", mods = "Alt", chars = "\u001B[1;3B" },
+{ key = "Down", mode = "~AppCursor", chars = "\u001B[B" },
+{ key = "Down", mode = "AppCursor", chars = "\u001BOB" },
+
+{ key = "Tab", mods = "Shift", chars = "\u001B[Z" },
+{ key = "Back", mods = "Alt", chars = "\u001B\u007F" },
+
+{ key = "W", mods = "Command", chars = "\u0002&" },
+{ key = "T", mods = "Command", chars = "\u0002c" },
+{ key = "RBracket", mods = "Command|Shift", chars = "\u0002n" },
+{ key = "LBracket", mods = "Command|Shift", chars = "\u0002p" },
+{ key = "RBracket", mods = "Command", chars = "\u0002o" },
+{ chars = "\u0002;", key = "LBracket", mods = "Command" },
+
+{ key = "V", mods = "Control | Shift", action = "Paste" },
+{ key = "C", mods = "Command", action = "Copy" },
+{ key = "Q", mods = "Command", action = "Quit" },
+{ key = "N", mods = "Command", action = "SpawnNewInstance" },
+
+{ key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+{ key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+{ key = "Minus", mods = "Command|Shift", action = "ResetFontSize" },
+]
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 1000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+opacity = 0.85
+resize_increments = true
