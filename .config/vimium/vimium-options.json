@@ -1,6 +1,6 @@
 {
-  "keyMappings": "unmapAll\n\nmap h scrollLeft\nmap <down> scrollDown\nmap <up> scrollUp\nmap <s-right> scrollRight\nmap <s-left> scrollLeft\nmap <home> scrollToTop\nmap <end> scrollToBottom\nmap <s-down> scrollPageDown\nmap <s-up> scrollPageUp\n\n\n#focusing\nmap se focusInput\nmap t LinkHints.activateMode\nmap T LinkHints.activateModeWithQueue\nmap yt  LinkHints.activateModeToCopyLinkUrl\n\n#tabs\nmap <left> previousTab\nmap <right> nextTab\nmap <c-left> moveTabLeft\nmap <c-right> moveTabRight\nmap wt moveTabToNewWindow\n\n# find mode\nmap / enterFindMode\nmap n performFind\nmap N performBackwardsFind\n\nmap ? showHelp",
-  "linkHintCharacters": "arschneio",
+  "keyMappings": "unmapAll\n\nmap h scrollLeft\nmap <down> scrollDown\nmap <up> scrollUp\nmap <s-right> scrollRight\nmap <s-left> scrollLeft\nmap <home> scrollToTop\nmap <end> scrollToBottom\nmap <s-down> scrollPageDown\nmap <s-up> scrollPageUp\n\n\n#focusing\nmap se focusInput\nmap t LinkHints.activateMode\nmap T LinkHints.activateModeWithQueue\nmap yt  LinkHints.activateModeToCopyLinkUrl\n\n#tabs\nmap <left> previousTab\nmap <right> nextTab\nmap <c-left> moveTabLeft\nmap <c-right> moveTabRight\nmap wt moveTabToNewWindow\n\nmap ? showHelp",
+  "linkHintCharacters": "nplseriaocm",
   "newTabUrl": "",
   "nextPatterns": "",
   "previousPatterns": "",
@@ -13,15 +13,11 @@
   "exclusionRules": [
     {
       "passKeys": "",
-      "pattern": "https?://mail.google.com/*"
-    },
-    {
-      "passKeys": "",
       "pattern": "https?://excalidraw.com/*"
     },
     {
       "passKeys": "",
-      "pattern": "https?://www.nytimes.com/*"
+      "pattern": "https?://docs.google.com/*"
     }
   ]
 }

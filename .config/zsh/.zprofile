@@ -9,15 +9,18 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="$HOME/.config/sway/bin:$PATH"
-
-export GTK_THEME=Dracula
-export XCURSOR_THEME=Bibata-Modern-Ice
-export EDITOR=nvim
-export MOZ_ENABLE_WAYLAND=1
-export XDG_CURRENT_TYPE=wayland
-export RUST_BACKTRACE=1
-export QT_QPA_PLATFORM=wayland
+export PATH=$PATH:/usr/local/go/bin
 export XDG_CONFIG_HOME=$HOME/.config
+
+export EDITOR=nvim
+export XDG_CURRENT_TYPE=wayland
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland
+
+export GTK_THEME=Gruvbox-Dark
+
+export RUST_BACKTRACE=1
+source $XDG_CONFIG_HOME/fzf/config
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#999999,bg=#282A36"
 

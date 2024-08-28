@@ -24,7 +24,7 @@ default-result-background-padding = 0
 default-result-background-corner-radius = 0
 
 # Selection text
-selection-color = #50FA7B
+selection-color = #A9B665
 selection-background = #00000000
 selection-background-padding = 0
 selection-background-corner-radius = 0
@@ -44,7 +44,7 @@ result-spacing = 15
 ### Window theming
 width = 100%
 height = 100%
-background-color = #000C
+background-color = #000E
 outline-width = 0
 outline-color = #080800
 border-width = 0

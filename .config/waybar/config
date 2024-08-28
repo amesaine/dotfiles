@@ -1,4 +1,5 @@
 {
+    "position": "bottom",
     "margin-top": 10,
     "margin-left": 10,
     "margin-right": 10,
@@ -16,7 +17,7 @@
         "tooltip-format": "{:%c}"
     },
     "clock#time": {
-        "format": "{:%H:%M %p}"
+        "format": "{:%H:%M}"
     },
     "wlr/taskbar": {
         "sort-by-app-id": true,
@@ -26,18 +27,21 @@
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
-        "ignore-list": [
-            "foot"
-        ]
     },
 
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
-        "format": "●",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "9": ""
+        },
         "persistent_workspaces": {
             "1":[],
             "2":[],
+            "9":[],
         }
     },
 

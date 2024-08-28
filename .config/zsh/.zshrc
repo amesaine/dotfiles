@@ -16,11 +16,6 @@ bindkey -v
 
 autoload -U select-word-style && select-word-style bash
 
-bindkey -r '^W' 
-bindkey '^H' backward-kill-word
-bindkey "^[[1;5D" backward-word 
-bindkey "^[[1;5C" forward-word
-bindkey "^N" expand-or-complete
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
@@ -49,17 +44,42 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# precmd_center() {
+#   local CENTER=$(( LINES / 2))
+#
+#   local row
+#   echo -ne '\e[6n' > /dev/tty
+#   read -t 1 -s -r -d\[ row < /dev/tty # garbage
+#   read -t 1 -s -r -d R row < /dev/tty # cursor position
+#   row=${row//;*}
+#
+#   if (( row > CENTER )); then
+#     printf '%.0s\n' {1..$(( LINES - CENTER))}
+#     tput cuu $(( LINES - CENTER ))
+#   fi
+# }
+# add-zsh-hook precmd precmd_center
+
 . "$HOME/.cargo/env"
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/.zsh_aliases
-source ~/.config/zsh/.zsh_oxide
+source $ZDOTDIR/.zsh_aliases
+source $ZDOTDIR/.zsh_oxide
+source $ZDOTDIR/.zsh_custom_widgets
 source $ZDOTDIR/powerlevel10k/powerlevel10k.zsh-theme
+source $ZDOTDIR/zsh-history-substring-search.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+bindkey -r '^W' 
+bindkey '^H' backward-kill-word
+bindkey "^[[1;5D" backward-word 
+bindkey "^[[1;5C" forward-word
+bindkey "^N" expand-or-complete
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
 
 function osc7-pwd() {
     emulate -L zsh # also sets localoptions for us

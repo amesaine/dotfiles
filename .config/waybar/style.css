@@ -4,7 +4,7 @@
 */
 
 * {
-    border-radius: 20px;
+    border-radius: 5px;
     font-family: "0xProto", "FontAwesome";
     font-size: 15px;
     min-height: 0;
@@ -22,7 +22,7 @@ window#waybar {
 
 #workspaces * {
     font-size: 12px;
-    color: @insensitive_base_color;
+    color: @theme_text_color;
 }
 
 #workspaces button {
@@ -30,9 +30,9 @@ window#waybar {
 }
 
 #workspaces button.focused > * {
-    background: #bd93f9;
+    background: #7daea3;
     padding: 0 5px;
-    color: transparent;
+    color: @theme_bg_color;
 }
 
 #clock.date {
@@ -41,9 +41,11 @@ window#waybar {
 }
 
 #clock.time {
-    background: #FF79C6;
-    color: #000;
+    background: @theme_bg_color;
     padding: 0 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ebdbb2;
 }
 
 #keyboard-state label.capslock {
@@ -81,10 +83,7 @@ window#waybar {
 #network.disconnected {
     background: @error_color;
     color: #000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ebdbb2;
 }
-
-#memory {
-    background: @theme_bg_color;
-    padding: 0 10px;
-}
-

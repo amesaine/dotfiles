@@ -2,13 +2,14 @@
 include /etc/sway/config-vars.d/*
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
 
-output * bg /home/amesaine/MyBackup/others/wallpaper/syuo_dracula.png fill
+# output * bg /home/amesaine/MyBackup/others/wallpaper/syuo_dracula.png fill
+output * bg /home/amesaine/.config/sway/gruvgirl.jpg fill
 
 # dracula color palette
 set $background #282A36
 set $background2 #44475A
-set $green #50FA7B
-set $red #FF5555
+set $green #89B482
+set $red #FF0000
 set $white #F8F8F2 
 set $blue #6272A4
 set $cyan #8BE9FD
@@ -28,15 +29,15 @@ set $right right
 # system 
 bindsym $mod+Control+q kill
 bindsym $mod+Shift+c reload
-bindsym $mod+x exit
+bindsym $mod+Control+Alt+x exit
 
 # displays
 set $laptop eDP-1
 set $television 'Sony SONY TV 0x00000101'
 
 bindswitch --reload --locked lid:on output $laptop disable
-# bindswitch --reload --locked lid:off output $laptop enable
 bindswitch --reload --locked lid:off output $laptop disable
+# bindswitch --reload --locked lid:off output $laptop disable
 output HDMI-A-2 pos 0 0
 output eDP-1 pos 0 1080
 
@@ -45,15 +46,12 @@ set $term alacritty
 set $browser_workspace 1
 set $terminal_workspace 2
 
-bindsym $mod+n exec $term zsh -c "tmux new -A -s default", workspace $terminal_workspace
 bindsym $mod+Control+s exec $term --command tmux new -A -s default, workspace $terminal_workspace 
 bindsym $mod+s workspace $terminal_workspace
 
-bindsym $mod+l workspace $neovide_workspace
-
 bindsym $mod+r workspace $browser_workspace
 bindsym $mod+Control+r workspace $browser_workspace, exec brave-browser --profile-directory="Default"
-bindsym $mod+Control+p workspace $browser_workspace, exec brave-browser --profile-directory="Profile 1"
+bindsym $mod+Shift+r workspace $browser_workspace, exec brave-browser --profile-directory="Profile 1"
 
 assign [app_id="Alacritty"] workspace $terminal_workspace
 assign [title="Brave"] workspace $browser_workspace 
@@ -67,7 +65,7 @@ bindsym $mod+Control+d exec $menu_desktop
 bindsym $mod+b exec sway-open-in-new-wspace binary
 set $menu_bin tofi-run --ascii-input true | xargs swaymsg exec --
 bindsym $mod+Control+b exec $menu_bin
-bindsym $mod+w exec sway-tofi-focus
+bindsym $mod+p exec sway-tofi-focus
 
 
 
@@ -81,11 +79,9 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# bindsym $mod+f workspace fullscreen-gaps
 
 # fullscreen
-# bindsym $mod+Shift+f exec sway-fullscreen-gaps
-bindsym $mod+f fullscreen
+bindsym $mod+Shift+f fullscreen
 
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+Shift+space floating toggle
@@ -109,7 +105,7 @@ include /etc/sway/config.d/*
 
 # mouse / cursor
 focus_follows_mouse no
-mouse_warping container
+# mouse_warping container
 input type:mouse {
     accel_profile flat
     pointer_accel 0.5
@@ -117,21 +113,26 @@ input type:mouse {
 
 # touchpad
 input type:touchpad {
+    # events disabled_on_external_mouse
     tap enabled
     natural_scroll enabled
     dwt enabled
     scroll_factor 2.5
 }
 
-
 # keyboard
 input type:keyboard {
-    xkb_layout colejak(default)
+    xkb_layout masha(default)
 }
+bindsym Control+dead_tilde input 1:1:AT_Translated_Set_2_keyboard xkb_switch_layout next
+
+
 
 # windows
 smart_borders on
 default_border pixel 3
+smart_gaps on
+gaps inner 8
 focus_on_window_activation focus
 popup_during_fullscreen leave_fullscreen
 client.focused $green $green $green $green $green 
@@ -151,14 +152,9 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%- -l 1.2
 bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+ -l 1.2
-bindsym $mod+Shift+Ctrl+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym $mod+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 bindsym $mod+t exec warpd --hint
-
-for_window [app_id="one.alynx.showmethekey" title="Floating Window - Show Me The Key"] {
-  floating enable
-  sticky enable
-}
 
 exec {
     sway-autotiling --limit 2

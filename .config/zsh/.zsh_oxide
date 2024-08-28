@@ -22,8 +22,14 @@ t() {
 }
 
 zqi() {
-    _zoxide_result="$(zoxide query -i -- "$@")" && _z_cd "$_zoxide_result"
+    _zoxide_result="$(zoxide query -i -- "$@")"
+    _z_cd "$_zoxide_result"
+    if [[ ! -z $_zoxide_result ]]; then
+        nvim +Oil .
+    fi
 }
+zle -N zqi
+bindkey "^@o" zqi
 
 
 zor() {
