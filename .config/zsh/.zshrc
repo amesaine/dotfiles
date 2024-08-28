@@ -16,8 +16,6 @@ bindkey -v
 
 autoload -U select-word-style && select-word-style bash
 
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.config/zsh/.zsh_history
@@ -43,22 +41,6 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-# precmd_center() {
-#   local CENTER=$(( LINES / 2))
-#
-#   local row
-#   echo -ne '\e[6n' > /dev/tty
-#   read -t 1 -s -r -d\[ row < /dev/tty # garbage
-#   read -t 1 -s -r -d R row < /dev/tty # cursor position
-#   row=${row//;*}
-#
-#   if (( row > CENTER )); then
-#     printf '%.0s\n' {1..$(( LINES - CENTER))}
-#     tput cuu $(( LINES - CENTER ))
-#   fi
-# }
-# add-zsh-hook precmd precmd_center
 
 . "$HOME/.cargo/env"
 

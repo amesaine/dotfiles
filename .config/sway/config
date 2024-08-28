@@ -2,7 +2,6 @@
 include /etc/sway/config-vars.d/*
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
 
-# output * bg /home/amesaine/MyBackup/others/wallpaper/syuo_dracula.png fill
 output * bg /home/amesaine/.config/sway/gruvgirl.jpg fill
 
 # dracula color palette
@@ -67,8 +66,6 @@ set $menu_bin tofi-run --ascii-input true | xargs swaymsg exec --
 bindsym $mod+Control+b exec $menu_bin
 bindsym $mod+p exec sway-tofi-focus
 
-
-
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
@@ -105,7 +102,6 @@ include /etc/sway/config.d/*
 
 # mouse / cursor
 focus_follows_mouse no
-# mouse_warping container
 input type:mouse {
     accel_profile flat
     pointer_accel 0.5
@@ -122,11 +118,8 @@ input type:touchpad {
 
 # keyboard
 input type:keyboard {
-    xkb_layout masha(default)
+    xkb_layout colejak(default)
 }
-bindsym Control+dead_tilde input 1:1:AT_Translated_Set_2_keyboard xkb_switch_layout next
-
-
 
 # windows
 smart_borders on
